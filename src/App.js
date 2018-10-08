@@ -5,7 +5,7 @@ import './App.css';
 class App extends Component {
   constructor() {
     super();
-    this.state = { message: '' };
+    this.state = { message: '', user: null };
   }
 
   componentDidMount() {
@@ -24,6 +24,7 @@ class App extends Component {
         <p className="App-intro">
           To get started, edit <code>src/App.js</code> and save to reload.
         </p>
+        <a href="/auth/google">Sign in with Google</a>
       </div>
     );
   }
