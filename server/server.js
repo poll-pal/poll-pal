@@ -1,9 +1,8 @@
 #!/usr/bin/env node
-
 /**
  * Module dependencies.
  */
-
+require('dotenv').config();
 var app = require('./app');
 var debug = require('debug')('express-react:server');
 var http = require('http');
