@@ -9,10 +9,17 @@ const UserSchema = new Schema({
         type: String,
         required: true
     },
-    // googleId: {
-    //     type: String,
-    //     required: true
-    // },
+    givenName: {
+        type: String,
+        required: true
+    },
+    familyName: {
+        type: String,
+        required: true
+    },
+    imageURL: {
+        type: String,
+    },
 });
 
 
