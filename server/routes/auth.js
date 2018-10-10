@@ -26,20 +26,30 @@ passport.use(new GoogleStrategy({
                 if (existingUser) {
                     done(null, existingUser);
                 } else {
-                    new db.User({ googleId: profile.id }).save()
-                        .then(user => done(null, user));
+                    let imageUrl = null;
+                    if (profile.photos.length) {
+                        imageUrl = profile.photos[0].value;
+                    }
+                    new db.User({
+                        googleId: profile.id,
+                        givenName: profile.name.givenName,
+                        familyName: profile.name.familyName,
+                        imageURL: imageUrl
+                    })
+                        .save()
+                        .then(newUser => {
+                            done(null, newUser);
+                        });
                 }
-            })
-    }));
+            });
+    }
+)
+);
+
 
 router.get('/google', passport.authenticate('google', {
     scope: ['profile', 'email']
 }));
-
-router.get('/logout', (req, res) => {
-    req.logout();
-    res.redirect('/');
-});
 
 router.get('/google/callback', passport.authenticate('google'), (req, res) => {
     res.redirect('/');
@@ -47,6 +57,11 @@ router.get('/google/callback', passport.authenticate('google'), (req, res) => {
 
 router.get('/current_user', (req, res) => {
     res.send(req.user);
+});
+
+router.get('/logout', (req, res) => {
+    req.logout();
+    res.redirect('/');
 });
 
 module.exports = router;
