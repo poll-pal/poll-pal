@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
+import Countdown from './Components/Countdown/'
 
 class App extends Component {
   constructor() {
@@ -24,6 +25,10 @@ class App extends Component {
         <p className="App-intro">
           To get started, edit <code>src/App.js</code> and save to reload.
         </p>
+        <h1>
+          The Final Countdown:
+        </h1>
+        <Countdown />
       </div>
     );
   }
