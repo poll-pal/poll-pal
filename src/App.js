@@ -1,35 +1,41 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
-import Countdown from './Components/Countdown/'
+import axios from 'axios';
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import Header from './components/Header/Header';
+import Countdown from './Components/Countdown/';
+
 
 class App extends Component {
-  constructor() {
-    super();
-    this.state = { message: '' };
-  }
+  state = { user: null };
+
+
+
 
   componentDidMount() {
-    fetch('/api/message')
-      .then(response => response.json())
-      .then(json => this.setState({ message: json }));
+    axios.get('/auth/current_user').then(({ data }) => {
+      this.setState({ user: data });
+      console.log("here is the user data", data);
+    });
   }
+
 
   render() {
     return (
-      <div className="App">
-        <div className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h2>{this.state.message}</h2>
+      <div> 
+        <Router>
+          <div className="container">
+            <Header user={this.state.user} />
+            <Switch>
+              {/* <Route exact path="/" component={} /> */}
+            </Switch>
+          </div>
+        </Router>
+        <div className="container">
+          <Countdown/>
         </div>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-        <h1>
-          The Final Countdown:
-        </h1>
-        <Countdown />
       </div>
+      
     );
   }
 }
