@@ -10,7 +10,13 @@ const UserProfile = () => (
             <p>Party: Add Code Here</p>
             <p>Location: Add Code Here</p>
         </div>
+        <div className="row">
+        <div className="col-md-12">
+        <button className="btn btn-primary">Edit</button>
+        </div>
+        </div>
     </div>
+
 );
 
 export default UserProfile;
