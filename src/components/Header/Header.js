@@ -6,8 +6,9 @@ import "./Header.css";
 const Header = props => {
     let content = (
         <li className="nav-item">
-            <a className="nav-link" href="/auth/google">Sign In With Google</a>
+            <a className="nav-link" href="/auth/google">Login</a>
         </li>
+  
     );
     if (props.user) {
         content = [
