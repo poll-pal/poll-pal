@@ -6,19 +6,19 @@ import "./Countdown.css";
 class Countdown extends Component {
   constructor() {
     super();
-    this.state = { 
+    this.state = {
       countDownDate: new Date("Nov 6, 2018 12:00:25").getTime(),
       days: 0,
       hours: 0,
       minutes: 0,
       second: 0,
-      
-   };
+
+    };
   }
-  
-  
+
+
   // Render each time the function is called
-  countdown(){
+  countdown() {
     // Get todays date and time
     let now = new Date().getTime();
 
@@ -26,17 +26,19 @@ class Countdown extends Component {
     let distance = this.state.countDownDate - now;
 
     // Time calculations for days, hours, minutes and seconds
-    this.setState({days: Math.floor(distance / (1000 * 60 * 60 * 24)),
-                  hours: Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)),
-                  minutes: Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60)),
-                  seconds: Math.floor((distance % (1000 * 60)) / 1000)});
+    this.setState({
+      days: Math.floor(distance / (1000 * 60 * 60 * 24)),
+      hours: Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)),
+      minutes: Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60)),
+      seconds: Math.floor((distance % (1000 * 60)) / 1000)
+    });
 
-    
+
     // If the count down is finished, write some text 
     if (distance < 0) {
-        // Kill it
-      }
-    
+      // Kill it
+    }
+
   }
   render() {
     return (

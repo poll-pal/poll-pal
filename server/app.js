@@ -8,7 +8,9 @@ const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 
 const index = require('./routes/index');
+const userRouter = require('./routes/user');
 const authRouter = require('./routes/auth');
+
 const cookieSession = require('cookie-session');
 const passport = require('passport');
 
@@ -37,6 +39,7 @@ app.set('view engine', 'jade');
 
 app.use('/api', index);
 app.use('/auth', authRouter);
+app.use('/api/users', userRouter);
 app.get('*', (req, res) => {
   res.sendFile('build/index.html', { root: global });
 });
@@ -58,7 +61,6 @@ app.use(function (err, req, res, next) {
   res.status(err.status || 500);
   res.render('error');
 });
-
 
 
 // If deployed, use the deployed database. Otherwise use the local mongoHeadlines database

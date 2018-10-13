@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import axios from 'axios';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import Header from './components/Header/Header';
+import Header from './Components/Header/Header';
 import Countdown from './Components/Countdown/';
 
 
@@ -22,7 +22,7 @@ class App extends Component {
 
   render() {
     return (
-      <div> 
+      <div>
         <Router>
           <div className="container">
             <Header user={this.state.user} />
@@ -32,10 +32,10 @@ class App extends Component {
           </div>
         </Router>
         <div className="container">
-          <Countdown/>
+          <Countdown />
         </div>
       </div>
-      
+
     );
   }
 }
