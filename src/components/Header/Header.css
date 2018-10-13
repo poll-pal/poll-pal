@@ -1,6 +1,6 @@
+@import url('https://fonts.googleapis.com/css?family=Anton');
 
-.navbar{
-    height: 90px;
-    line-height: 90px;
-    white-space: nowrap;
+.navbar-brand {
+    font-family: 'Josefin Slab', serif;
+    font-size: 50px;
 }

@@ -19,7 +19,7 @@ class App extends Component {
 
   render() {
     return (
-      <div> 
+      <div>
         <Router>
           <div className="container">
             <Header user={this.state.user} />

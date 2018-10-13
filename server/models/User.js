@@ -1,4 +1,6 @@
 const mongoose = require("mongoose");
+const Candidate = require('./Candidate');
+const BallotInitiative = require('./BallotInitiative');
 
 // Save a reference to the Schema constructor
 const Schema = mongoose.Schema;
@@ -20,6 +22,8 @@ const UserSchema = new Schema({
     imageURL: {
         type: String,
     },
+    ballotInitiatives: [BallotInitiative],
+    candidates: [Candidate]
 });
 
 
