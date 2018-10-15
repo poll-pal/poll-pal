@@ -7,6 +7,7 @@ import Countdown from './Components/Countdown/';
 import UserProfile from './Components/UserProfile';
 import UserProfileForm from './Components/UserProfileForm';
 import BallotCard from './Components/BallotCard';
+import UserSurvey from './Components/UserSurvey';
 
 class App extends Component {
   state = { user: null, loading: true };
@@ -38,8 +39,8 @@ class App extends Component {
         {/* <Route exact path="/user" component={UserProfile} /> */}
         <Route exact path="/user" render={(props) => <UserProfile {...props} user={this.state.user} />} />
         <Route exact path="/user/edit" render={(props) => <UserProfileForm {...props} user={this.state.user} updateUser={this.updateUser} />} />
-
         <Route exact path="/yourballot" component={BallotCard} />
+        <Route exact path="/survey" component={UserSurvey} />
       </Switch>);
     }
     return (
