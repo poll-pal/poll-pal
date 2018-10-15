@@ -24,7 +24,7 @@ Option #1
 <img src="./SplashV1.png"/>
 
 Option #2
-<img src="./SplashV2.jpg"/>
+<img src="./SplashV2.png"/>
 
 Option #3
 <img src="./SplashAlternate.jpg"/>
