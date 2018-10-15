@@ -8,7 +8,7 @@ const Header = props => {
         <li className="nav-item">
             <a className="nav-link" href="/auth/google">Login</a>
         </li>
-  
+
     );
     if (props.user) {
         content = [
@@ -16,11 +16,13 @@ const Header = props => {
                 <span className="navbar-text">Hello, {props.user.givenName}</span>
             </li>,
             <li className="nav-item" key="2">
-                <img
-                    style={{ borderRadius: '50%', padding: '8px 8px' }}
-                    src={props.user.imageURL}
-                    alt="User profile"
-                />
+                <Link to="/user">
+                    <img
+                        style={{ borderRadius: '50%', padding: '8px 8px' }}
+                        src={props.user.imageURL}
+                        alt="User profile"
+                    />
+                </Link>
             </li>,
             <li className="nav-item" key="3">
                 <a className="nav-link" href="/auth/logout">Logout</a>
