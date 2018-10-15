@@ -31,10 +31,10 @@ Option #3
 
 # Search Page
 Option #1 - Left-Aligned
-<img src="./HomePage.jpg"/>
+<img src="./HomePage.png"/>
 
 Option #2 - Center-Aligned
-<img src="./HomePage.jpg"/>
+<img src="./HomePageAlternate.jpg"/>
 
 # Survey Page
 <img src="./Survey.jpg"/>
