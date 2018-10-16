@@ -8,11 +8,6 @@ const Header = props => {
     let content = (
         <li className="nav-item">
             <a className="nav-link" href="/auth/google">Login</a>
-        </li>,
-        <li className="nav-item" key="4">
-            <Link to="/survey">
-                <a className="nav-link">Get Started</a>
-            </Link>
         </li>
     );
     // Navbar content if user is logged in
@@ -47,6 +42,11 @@ const Header = props => {
                 Poll Pal
             </Link>
             <ul className="navbar-nav">{content}</ul>
+            <li className="nav-item" key="4">
+                <Link to="/survey">
+                    <a className="nav-link">Get Started</a>
+                </Link>
+            </li>
         </nav>
     );
 };
