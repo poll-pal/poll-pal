@@ -4,12 +4,18 @@ import "./Header.css";
 
 
 const Header = props => {
+    // Setting up main navbar content
     let content = (
         <li className="nav-item">
             <a className="nav-link" href="/auth/google">Login</a>
+        </li>,
+        <li className="nav-item" key="4">
+            <Link to="/survey">
+                <span className="navbar-text">Get Started</span>
+            </Link>
         </li>
-
     );
+    // Navbar content if user is logged in
     if (props.user) {
         content = [
             <li className="nav-item" key="1">
@@ -22,6 +28,11 @@ const Header = props => {
                         src={props.user.imageURL}
                         alt="User profile"
                     />
+                </Link>
+            </li>,
+            <li className="nav-item" key="5">
+                <Link to="/survey">
+                    <span className="navbar-text">Get Started</span>
                 </Link>
             </li>,
             <li className="nav-item" key="3">
