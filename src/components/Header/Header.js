@@ -11,7 +11,7 @@ const Header = props => {
         </li>,
         <li className="nav-item" key="4">
             <Link to="/survey">
-                <span className="navbar-text">Get Started</span>
+                <a className="nav-link">Get Started</a>
             </Link>
         </li>
     );
@@ -32,7 +32,7 @@ const Header = props => {
             </li>,
             <li className="nav-item" key="5">
                 <Link to="/survey">
-                    <span className="navbar-text">Get Started</span>
+                    <a className="nav-link">Get Started</a>
                 </Link>
             </li>,
             <li className="nav-item" key="3">
@@ -40,13 +40,12 @@ const Header = props => {
             </li>
         ];
     }
-
     return (
-
-        <nav className="navbar navbar-expand-lg navbar-light bg-light">
+        // Displays content if user is not logged in.
+        <nav className="navbar navbar-expand-lg navbar-light bg-light" key="7">
             <Link className="navbar-brand" to="/">
                 Poll Pal
-                    </Link>
+            </Link>
             <ul className="navbar-nav">{content}</ul>
         </nav>
     );
