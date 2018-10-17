@@ -25,11 +25,6 @@ const Header = props => {
                     />
                 </Link>
             </li>,
-            <li className="nav-item" key="5">
-                <Link to="/survey">
-                    <a className="nav-link">Get Started</a>
-                </Link>
-            </li>,
             <li className="nav-item" key="3">
                 <a className="nav-link" href="/auth/logout">Logout</a>
             </li>
@@ -41,12 +36,14 @@ const Header = props => {
             <Link className="navbar-brand" to="/">
                 Poll Pal
             </Link>
-            <ul className="navbar-nav">{content}</ul>
-            <li className="nav-item" key="4">
-                <Link to="/survey">
-                    <a className="nav-link">Get Started</a>
-                </Link>
-            </li>
+            <ul className="navbar-nav">
+                {content}
+                <li className="nav-item" key="4">
+                    <Link to="/survey">
+                        <span className="nav-link" key="5">Get Started</span>
+                    </Link>
+                </li>
+            </ul>
         </nav>
     );
 };
