@@ -3,6 +3,8 @@ import "./Countdown.css";
 
 
 
+
+
 class Countdown extends Component {
   constructor() {
     super();
@@ -42,44 +44,34 @@ class Countdown extends Component {
   }
   render() {
     return (
-      <div className="clockWrapper">
-        <table>
-          <tr>
-            <th>
-              Days
-            </th>
-            <th>
-              Hours
-            </th>
-            <th>
-              Minutes
-            </th>
-            <th>
-              Seconds
-            </th>
-          </tr>
-          <tr>
-            <td>
-              {this.state.days}
-            </td>
-            <td>
-              {this.state.hours}
-            </td>
-            <td>
-              {this.state.minutes}
-            </td>
-            <td>
-              {this.state.seconds}
-            </td>
-          </tr>
-        </table>
-        <h1>Width</h1>
-        <p>{window.innerWidth}</p>
-        <p>{window.innerWidth * .1}</p>
-        <h2>Height</h2>
-        <p>{window.innerHeight}</p>
-        <p>{window.innerHeight * .1}</p>
+      <div className="container">
+        <div className="row clockWrapper">
+        <div className="col-lg-3" id="countdown">
+          <div className="clock" id="countdown-number">            
+              <h2>Days</h2>
+              <h3>{this.state.days}</h3>
+          </div>
+        </div>
+        <div className="col-lg-3" id="countdown">
+          <div className="clock" id="countdown-number">
+            <h2>Hours</h2>
+            <h3>{this.state.hours}</h3>
+          </div>
+        </div>
+        <div className="col-lg-3" id="countdown">
+        <div className="clock" id="countdown-number">
+          <h2>Minutes</h2>
+          <h3>{this.state.minutes}</h3>
+        </div>
+        </div>
+        <div className="col-lg-3" id="countdown">
+          <div className="clock" id="countdown-number">
+            <h2>Seconds</h2>
+            <h3>{this.state.seconds}</h3>
+          </div>
+        </div>
       </div>
+    </div>
     );
   }
 
