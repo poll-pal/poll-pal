@@ -1,6 +1,23 @@
-.clockWrapper{
-    position: relative;
-    margin-left: 33%;
-    width: 33vw;
+@import url('https://fonts.googleapis.com/css?family=Oswald');
 
+*{
+    background-image: url('/img/homepage-bg.jpg');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+  }
+  
+.clockWrapper{
+    color: black;
+    font-family: 'Oswald', sans-serif;
 }
+
+.clock{
+    text-align: center;
+    border-radius: 70%;
+    border: 1px solid rgb(214, 214, 214);
+    color: aliceblue;
+    width: 100px;
+    height: 100px;
+    padding-top: 25px;
+}
+
