@@ -8,6 +8,7 @@ import UserProfile from './Components/UserProfile';
 import UserProfileForm from './Components/UserProfileForm';
 import BallotCard from './Components/BallotCard';
 import UserSurvey from './Components/UserSurvey';
+import MainPage from './Components/MainPage';
 
 class App extends Component {
   state = { user: null, loading: true };
@@ -33,7 +34,7 @@ class App extends Component {
       content = (<Switch>
         <Route exact path="/" render={() => {
           return (
-            <Countdown />
+            <MainPage />
           )
         }} />
         {/* <Route exact path="/user" component={UserProfile} /> */}
