@@ -12,10 +12,16 @@ const BallotCard = () => (
         <div className="row">
             <div className="col-lg-6 col-sm-12">
                 <div className="card">
-                    <img src="" alt="John Doe" className="candidateImage" />
-                    <h3>Beto O'Rourke</h3>
-                    <h4>Running For: Senate</h4>
-                    <h5>Party: Democrat</h5>
+                    <div className="card-body">
+                        <h3 className="card-title">Beto O'Rourke<span><i className="fas fa-info-circle pull-right"></i></span></h3>
+                        <h4>Senate</h4>
+                        <h5>Democratic Party</h5>
+                    </div>
+                    <div className="row">
+                        <div className="col-lg-12">
+                            <span><button type="button" className="btn btn-success">Vote Yes</button></span>&nbsp;&nbsp;<span><button type="button" className="btn btn-danger">Vote No</button></span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
