@@ -1,6 +1,7 @@
 const mongoose = require("mongoose");
 const Candidate = require('./CandidateData');
 const BallotInitiative = require('./BallotInitiative');
+const District = require('./District');
 
 // Save a reference to the Schema constructor
 const Schema = mongoose.Schema;
@@ -24,6 +25,7 @@ const UserSchema = new Schema({
     },
     ballotInitiatives: [BallotInitiative],
     candidates: [Candidate],
+    districts: [District]
 });
 
 
