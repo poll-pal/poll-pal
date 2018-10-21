@@ -5,8 +5,11 @@ const Schema = mongoose.Schema;
 
 const BallotInitiativeSchema = new Schema({
     name: String,
+    topic: String,
     description: String,
-    choice: String
+    choice: String,
+    type: String,
+    url: String
 });
 
 // Export the Candidate model

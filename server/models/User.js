@@ -1,5 +1,5 @@
 const mongoose = require("mongoose");
-const Candidate = require('./Candidate');
+const Candidate = require('./CandidateData');
 const BallotInitiative = require('./BallotInitiative');
 const District = require('./District');
 
