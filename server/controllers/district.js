@@ -4,7 +4,7 @@ const BP_URL = `https://api.ballotpedia.org/v3/api/contains?access_token=${proce
 /* 
  * 
  */
-const getDistrictCoord = (latLng, callback = null) => {
+const getDistrictsLatLng = (latLng, callback = null) => {
     let uri = BP_URL + latLng.join(',');
     console.log(uri);
     axios.get(uri)
@@ -34,5 +34,8 @@ const getDistrictByAddress = (address, callback = null) => {
 }
 
 module.exports = {
-    latLng: getDistrictCoord
+    getDistrictsLatLng: getDistrictsLatLng,
+    getDistrictByAddress: getDistrictByAddress
 }
+// Test API Call - Uncomment below
+// getDistrictsLatLng([39.4711, -104.7890])
