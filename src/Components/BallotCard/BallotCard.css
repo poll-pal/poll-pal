@@ -15,6 +15,10 @@
     padding: 2px 16px;
 }
 
+h1 {
+    text-align: center;
+}
+
 .fa-info-circle {
     color: blue;
 }
