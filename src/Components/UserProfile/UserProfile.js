@@ -10,8 +10,8 @@ const UserProfile = props => {
             <div className="card">
                 <img src={props.user.imageURL} alt="user" className="userImage" />
                 <h3>{props.user.givenName} {props.user.familyName}</h3>
-                <p>Party: Add Code Here</p>
-                <p>Location: Add Code Here</p>
+                <h4>Address: {props.user.address}</h4>
+                <h4>Party Affiliation: Add Code Here</h4>
             </div>
             <div className="row">
                 <div className="col-md-12">

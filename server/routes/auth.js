@@ -34,7 +34,8 @@ passport.use(new GoogleStrategy({
                         googleId: profile.id,
                         givenName: profile.name.givenName,
                         familyName: profile.name.familyName,
-                        imageURL: imageUrl
+                        imageURL: imageUrl,
+                        address: ''
                     })
                         .save()
                         .then(newUser => {

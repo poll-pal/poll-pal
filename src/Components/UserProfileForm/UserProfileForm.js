@@ -9,7 +9,8 @@ class UserProfileForm extends Component {
         super(props);
         this.state = {
             firstName: props.user.givenName,
-            lastName: props.user.familyName
+            lastName: props.user.familyName,
+            address: props.user.address
         }
 
     }
@@ -20,6 +21,7 @@ class UserProfileForm extends Component {
         this.props.updateUser({
             givenName: this.state.firstName,
             familyName: this.state.lastName,
+            address: this.state.address
             // location: this.state.location,
             // party: this.state.party,
         })
@@ -38,20 +40,27 @@ class UserProfileForm extends Component {
 
             content = (<form>
                 <div className="form-group">
-                    <label htmlFor="firstName">First name</label>
+                    
                     <input type="text" className="form-control" id="firstName"
                         value={this.state.firstName}
                         onChange={this.handleInputChange}
                         name="firstName"
                         placeholder="First Name (required)" />
-                </div>
-                <div className="form-group">
-                    <label htmlFor="LastName">Last Name</label>
+                    <label htmlFor="firstName">First name</label>
+                    
                     <input type="text" className="form-control" id="lastName"
                         value={this.state.lastName}
                         onChange={this.handleInputChange}
                         name="lastName"
                         placeholder="Last Name (required)" />
+                    <label htmlFor="LastName">Last Name</label>
+                    
+                    <input type="text" className="form-control" id="address"
+                        value={this.state.address}
+                        onChange={this.handleInputChange}
+                        name="address"
+                        placeholder="Physical Address or Postal Code" />
+                    <label htmlFor="address">Voting Address</label>
                 </div>
                 {/* <div className="form-group">
                     <label htmlFor="Party">Party</label>
