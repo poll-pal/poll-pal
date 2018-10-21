@@ -10,10 +10,10 @@ const getDistrictCoord = (latLng, callback = null) => {
     axios.get(uri)
         .then(response => {
             if(callback){
-                callback.json(response);
+                callback.json(response.data);
             }
             else{
-                console.log(response);
+                console.log(response.data);
             }
     })
         .catch(err => console.log(err.message));
@@ -24,10 +24,10 @@ const getDistrictByAddress = (address, callback = null) => {
     axios.get(BP_URL)
         .then(response => { 
             if(callback){
-                callback.json(response);
+                callback.json(response.data);
             }
             else{
-                console.log(response);
+                console.log(response.data);
             }
     })
         .catch(err => console.log(err.message));
