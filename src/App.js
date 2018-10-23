@@ -50,7 +50,6 @@ class App extends Component {
             {content}
           </div>
         </Router>
-        <Footer />
       </div>
     );
   }
