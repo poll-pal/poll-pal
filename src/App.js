@@ -8,6 +8,7 @@ import UserProfileForm from './Components/UserProfileForm';
 import BallotCard from './Components/BallotCard';
 import UserSurvey from './Components/UserSurvey';
 import MainPage from './Components/MainPage';
+import Footer from './Components/Footer';
 
 class App extends Component {
   state = { user: null, loading: true };
@@ -48,6 +49,7 @@ class App extends Component {
           <div className="container">
             <Header user={this.state.user} />
             {content}
+            <Footer />
           </div>
         </Router>
       </div>
