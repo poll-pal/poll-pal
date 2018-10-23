@@ -7,16 +7,42 @@ const UserProfile = props => {
     let content = <div>You must sign in to view your profile</div>
     if (props.user) {
         content = (<div className="row">
-            <div className="card">
-                <img src={props.user.imageURL} alt="user" className="userImage" />
-                <h3>{props.user.givenName} {props.user.familyName}</h3>
-                <p>Party: Add Code Here</p>
-                <p>Location: Add Code Here</p>
-            </div>
-            <div className="row">
-                <div className="col-md-12">
-                    <Link to="/user/edit">Edit</Link>
+            <div className="card text-center">
+                <a className="close" aria-label="Close" href="/">
+                        <span aria-hidden="true">&times;</span>
+                </a>
+                <img src={props.user.imageURL} alt="user" className="userImage rounded" />
+                
+                <h2>{props.user.givenName} {props.user.familyName}</h2>
+                <h3>Address: {props.user.address}</h3>
+                <h3>Party Affiliation: Add Code Here</h3>
+                <Link to="/user/edit">
+                <button type="button" className="btn btn-info btn-lg">Edit Profile</button>
+                </Link>
+                <div className="districts text-center">
+                    <h5>Districts (Races you can vote in):</h5>
+                    <table className="table">
+                        <thead className="thead-dark">
+                            <tr>
+                            <th scope="col">Name</th>
+                            <th scope="col">Type</th>
+                            <th scope="col">State</th>
+                            <th scope="col">Map</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {props.user.districts.map(district => (
+                                <tr>
+                                    <td>{district.name}</td>
+                                    <td>{district.type}</td>
+                                    <td>{district.state}</td>
+                                    <td>{district.kml}</td>
+                                </tr>
+                            ))}
+                        </tbody>
+                    </table>
                 </div>
+                
             </div>
         </div>);
     }

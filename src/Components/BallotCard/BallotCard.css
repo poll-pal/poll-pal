@@ -1,0 +1,63 @@
+.container {
+    /* padding-right: 0px;
+    padding-left: 0px; */
+    max-width: 100%; 
+}
+
+.ballotMain {
+    margin-top: 3%;
+}
+
+.ballotPageImg {
+    height: 500px;
+    width: 400px;
+    float: right;
+}
+
+.ballotDescription {
+    padding-right: 250px;
+
+}
+
+.card {
+    padding: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+}
+
+.ballotCard {
+    padding-right: 100px;
+    padding-left: 100px;
+}
+
+/* On mouse-over, add a deeper shadow */
+.card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+h2 {
+    text-align: center;
+}
+
+.candidateResults {
+    margin-top: 3%;
+}
+
+.fa-twitter {
+    padding: 2px;
+}
+
+.footer {
+    z-index: 99;
+}
+
+@media only screen and (max-width: 768px) {
+    .ballotCard {
+        padding-right: 10px;
+        padding-left: 10px;
+    }
+
+    .card {
+        padding: 5px;
+    }
+}

@@ -10,6 +10,9 @@ const mongoose = require('mongoose');
 const index = require('./routes/index');
 const userRouter = require('./routes/user');
 const authRouter = require('./routes/auth');
+const districtsRouter = require('./routes/districts');
+const candidatesRouter = require('./routes/candidates');
+const measuresRouter = require('./routes/ballotMeasures');
 
 const cookieSession = require('cookie-session');
 const passport = require('passport');
@@ -40,6 +43,9 @@ app.set('view engine', 'jade');
 app.use('/api', index);
 app.use('/auth', authRouter);
 app.use('/api/users', userRouter);
+app.use('/api/districts', districtsRouter);
+app.use('/api/candidates', candidatesRouter);
+app.use('/api/ballotMeasures', measuresRouter);
 app.get('*', (req, res) => {
   res.sendFile('build/index.html', { root: global });
 });

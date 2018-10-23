@@ -3,12 +3,12 @@ import './App.css';
 import axios from 'axios';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Header from './Components/Header/Header';
-import Countdown from './Components/Countdown/';
 import UserProfile from './Components/UserProfile';
 import UserProfileForm from './Components/UserProfileForm';
 import BallotCard from './Components/BallotCard';
 import UserSurvey from './Components/UserSurvey';
 import MainPage from './Components/MainPage';
+import Footer from './Components/Footer';
 
 class App extends Component {
   state = { user: null, loading: true };
@@ -37,7 +37,6 @@ class App extends Component {
             <MainPage />
           )
         }} />
-        {/* <Route exact path="/user" component={UserProfile} /> */}
         <Route exact path="/user" render={(props) => <UserProfile {...props} user={this.state.user} />} />
         <Route exact path="/user/edit" render={(props) => <UserProfileForm {...props} user={this.state.user} updateUser={this.updateUser} />} />
         <Route exact path="/yourballot" component={BallotCard} />
@@ -52,6 +51,7 @@ class App extends Component {
             {content}
           </div>
         </Router>
+        <Footer />
       </div>
     );
   }

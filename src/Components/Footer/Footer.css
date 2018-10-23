@@ -1,0 +1,15 @@
+
+.footer{
+    right: 0;
+    bottom: 0;
+    left: 0;
+    max-width: 100%;
+}
+
+.social{
+    margin-right: 4px;
+}
+
+.ul-social{
+    padding-left: 15px;
+}
