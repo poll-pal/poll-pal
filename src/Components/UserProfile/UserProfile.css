@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Oswald');
 
 .card {
-    width: 100%;
+    width: 100% !important;
     margin-top: 2%;
 }
 
@@ -9,6 +9,19 @@
     text-align: center;
 }
 .userImage {
-height: 100px;
-width: 100px;
+height: 10vw;
+width: 10vw;
+margin-left: 37vw;
+}
+
+.districts{
+    position: relative;
+    margin-top: 5vh;
+    width: 80%;
+    margin-left: 10%;
+}
+
+.close{
+    width:3vw;
+    font-size: 3rem;
 }

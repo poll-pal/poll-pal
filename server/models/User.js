@@ -23,6 +23,9 @@ const UserSchema = new Schema({
     imageURL: {
         type: String,
     },
+    address: {
+        type: String
+    },
     ballotInitiatives: [BallotInitiative],
     candidates: [Candidate],
     districts: [District]
