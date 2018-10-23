@@ -3,20 +3,21 @@ import "./BallotCard.css";
 
 const BallotCard = () => (
     <div className="container">
-    <div className="row ballotMain">
-        <div className="col-lg-6 col-sm-12">
-            <img src="img/ballot-page.png" alt="Vote" className="ballotPageImg" />
+        <div className="row ballotMain">
+            <div className="col-lg-6 col-sm-12">
+                <img src="img/ballot-page.png" alt="Vote" className="ballotPageImg" />
+            </div>
+            <div className="col-lg-6 col-sm-12 ballotDescription">
+                <h1>Your District Ballot</h1>
+                <br/>
+                <p className="ballotWelcome">
+                    Be part of the change in your community by casting your vote! Discover who's running in your district and 
+                    find out what candidates you might identify with best, then visit their website and social media platforms to 
+                    learn even more about what they stand for. Keep scrolling for state and county ballot initiatives so you're ready 
+                    to fill out that ballot in style! Just Vote Yes or Vote No and then pull up your Poll Pal to help you out!
+                </p>
+            </div>
         </div>
-        <div className="col-lg-6 col-sm-12 ballotDescription">
-            <h1>Your District Ballot</h1>
-            <p>
-                Be part of the change in your community by casting your vote! Discover who's running in your district and 
-                find out what candidates you might identify with best, then visit their website and social media platforms to 
-                learn even more about what they stand for. Keep scrolling for state and county ballot initiatives so you're ready 
-                to fill out that ballot in style! Just Vote Yes or Vote No and then pull up your Poll Pal to help you out!
-            </p>
-        </div>
-    </div>
         <div className="row">
             <div className="col-lg-12 candidateResults">
                 <h2>Candidates in Your District</h2>
