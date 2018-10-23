@@ -17,7 +17,6 @@ const getMeasuresByState = (state, callback = null) => {
             let validMeasures = [];
             response.data.data.forEach(measure =>{
                 if(measure.status == 'On the ballot'){
-                    console.log(measure);
                     validMeasures.push(measure);
                 }
             });
@@ -40,7 +39,6 @@ const getMeasuresByAddress = (address, callback = null) => {
             let validMeasures = [];
             response.data.data.forEach(measure =>{
                 if(measure.status == 'On the ballot'){
-                    console.log(measure);
                     validMeasures.push(measure);
                 }
             });

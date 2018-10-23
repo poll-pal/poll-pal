@@ -5,7 +5,6 @@ const measures = require('../controllers/ballotMeasures');
 
 router.get('/', (req, res, next) => {
     if(req.query.state){
-        console.log(req.query.state);
         measures.getMeasuresByState(req.query.state, res);
     }
     else if(req.query.address){
