@@ -1,12 +1,9 @@
-@import url('https://fonts.googleapis.com/css?family=Josefin+Slab');
+@import url('https://fonts.googleapis.com/css?family=Noto+Serif|Oxygen');
 
 
 
 body {
   margin: 0;
   padding: 0;
-  font-family: sans-serif;
-  
-  font-family: 'Josefin Slab', serif;
 
 }
