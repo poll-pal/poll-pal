@@ -1,6 +1,26 @@
-@import url('https://fonts.googleapis.com/css?family=Oswald');
+@import url('https://fonts.googleapis.com/css?family=Noto+Serif|Oxygen');
+
 
 .navbar-brand {
-    font-family: 'Josefin Slab', serif;
+    font-family: 'Oxygen', sans-serif, bold;
     font-size: 50px;
+    
+}
+
+.nav-item {
+    font-family: 'Oxygen', sans-serif;
+    font-size: 20px;
+    color: aliceblue;
+    text-align: right;
+    
+}
+.nav-link {
+    font-family: 'Oxygen', sans-serif;
+    font-size: 20px;
+    color: aliceblue;
+    text-align: right;
+}
+
+.mr-auto {
+    color: white;
 }

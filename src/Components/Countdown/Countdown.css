@@ -1,13 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Oswald');
-
-*{
-    background-image: url('/img/homepage-bg.jpg');
-    background-repeat: no-repeat;
-    background-size: 100% 100%;
-  }
   
 .clockWrapper{
-    color: black;
+    color: grey;
     font-family: 'Oswald', sans-serif;
 }
 
@@ -21,3 +15,50 @@
     padding-top: 25px;
 }
 
+body {
+    height: 100%;
+    width: 100%;
+    background-color: #333;
+  }
+  
+  #countdown {
+    position: relative;
+    margin: auto;
+    margin-top: 100px;
+    height: 100px;
+    width: 100px;
+    text-align: center;
+  }
+  
+  #countdown-number {
+    color: white;
+    display: inline-block;
+    line-height: 40px;
+  }
+  
+  svg {
+    top: 0;
+    right: 0;
+    width: 40px;
+    height: 40px;
+    transform: rotateY(-180deg) rotateZ(-90deg);
+  }
+  
+  svg circle {
+    stroke-dasharray: 113px;
+    stroke-dashoffset: 0px;
+    stroke-linecap: round;
+    stroke-width: 2px;
+    stroke: white;
+    fill: none;
+    animation: countdown 10s linear infinite forwards;
+  }
+  
+  @keyframes countdown {
+    from {
+      stroke-dashoffset: 0px;
+    }
+    to {
+      stroke-dashoffset: 113px;
+    }
+  }

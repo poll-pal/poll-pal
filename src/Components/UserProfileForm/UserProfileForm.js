@@ -13,7 +13,8 @@ class UserProfileForm extends Component {
             lastName: props.user.familyName,
             address: props.user.address,
             originalAddress: props.user.address,
-            districts: props.user.districts
+            districts: props.user.districts,
+            candidates: props.user
         }
 
     }
@@ -52,6 +53,7 @@ class UserProfileForm extends Component {
                         // location: this.state.location,
                         // party: this.state.party,
                     });
+                    // getCandidates(races);
                 })
                 .catch(err => console.log(err.message));
         }

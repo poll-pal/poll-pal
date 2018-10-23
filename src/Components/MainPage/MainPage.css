@@ -1,5 +1,37 @@
+@import url('https://fonts.googleapis.com/css?family=Noto+Serif|Oxygen');
+
+body{
+  background-image: url('../MainPage/background-3.jpg');
+  width: 100%;
+  height: auto;
+  padding-bottom: 64%;
+  background-size: contain;
+  background-repeat: no-repeat;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-position: right top;
+  background-attachment: fixed;
+  background-image: fixed;
+
+}
+
+#first{
+  color: aliceblue;
+  text-align: center;
+  font-size: 80px;
+
+}
+
+#second {
+  color: aliceblue;
+  text-align: center;
+  font-size: 40px;
+}
+
 .formControl {
-    border-top: 0px;
+  border-top: 0px;
 }
 
 input[type="text"],
@@ -7,6 +39,7 @@ select.form-control {
   background: transparent;
   border: none;
   border-bottom: 1px solid #000000;
+  color: aliceblue;
   -webkit-box-shadow: none;
   box-shadow: none;
   border-radius: 0;
@@ -19,3 +52,4 @@ select.form-control:focus {
   -webkit-box-shadow: none;
   box-shadow: none;
 }
+

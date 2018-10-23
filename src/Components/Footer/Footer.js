@@ -3,9 +3,6 @@ import { Link } from 'react-router-dom';
 import "./Footer.css";
 
 const Footer = props => (
-
-
-
     <footer className="container footer border-top">
         <div className="row">
             <div className="col-12 col-md">
@@ -45,11 +42,6 @@ const Footer = props => (
             </div>
         </div>
     </footer>
-
-
-
-
-
 )
 
 export default Footer;

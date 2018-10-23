@@ -14,7 +14,6 @@ const CandidateSchema = new Schema({
     website: String,
     socialMedia: [SocialMedia]
 
-
 });
 
 // Export the Candidate model

@@ -42,10 +42,12 @@ class Countdown extends Component {
     }
 
   }
+
+
   render() {
     return (
       <div className="container">
-        <div className="row clockWrapper">
+      <div className="row clockWrapper">
         <div className="col-lg-3" id="countdown">
           <div className="clock" id="countdown-number">            
               <h2>Days</h2>
@@ -72,8 +74,10 @@ class Countdown extends Component {
         </div>
       </div>
     </div>
-    );
-  }
+  
+  );
+}
+      
 
   componentDidMount() {
     setInterval(() => this.countdown(), 1000);
