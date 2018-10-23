@@ -1,5 +1,6 @@
 import React from "react";
 import "./BallotCard.css";
+import Footer from '../Footer';
 
 const BallotCard = () => (
     <div className="container">
@@ -25,6 +26,7 @@ const BallotCard = () => (
                 </div>
             </div>
         </div>
+        <Footer />
     </div>
 );
 
@@ -38,7 +40,7 @@ const BallotCard = () => (
 //                 <h1>Candidates in Your District</h1>
 //             </div>
 //         </div>
-    
+
 //         <div className="card">
 //             <img src="" alt="John Doe" className="candidateImage" />
 //             <h3>{props.CandidateSchema.name}</h3>
@@ -48,5 +50,5 @@ const BallotCard = () => (
 //     </div>;
 //     return content;
 // };
-    
+
 export default BallotCard;
