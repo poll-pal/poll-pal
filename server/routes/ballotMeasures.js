@@ -4,8 +4,22 @@ const measures = require('../controllers/ballotMeasures');
 
 
 router.get('/', (req, res, next) => {
-    console.log(req.query.state);
-    measures.getMeasures(req.query.state, res);
+    if(req.query.state){
+        console.log(req.query.state);
+        measures.getMeasuresByState(req.query.state, res);
+    }
+    else if(req.query.address){
+        measures.getMeasuresByAddress(req.query.address, res);
+    }
+    else if(req.query.zip){
+        measures.getMeasuresByAddress(req.query.zip, res);
+    }
+    else{
+        res.json({
+            message: "Unrecognized paramater"
+        })
+    }
+    
 });
 
 
