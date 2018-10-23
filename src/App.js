@@ -49,9 +49,9 @@ class App extends Component {
           <div className="container">
             <Header user={this.state.user} />
             {content}
-            <Footer />
           </div>
         </Router>
+        <Footer />
       </div>
     );
   }
