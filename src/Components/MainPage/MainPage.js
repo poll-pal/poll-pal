@@ -3,12 +3,15 @@ import { Link } from 'react-router-dom';
 import "./MainPage.css";
 import Countdown from '../Countdown/';
 
+
 const MainPage = () => (
     <div className="container">
         <div className="row">
             <div className="col-lg-12">
-                <h1>Hey Pal.</h1>
-                <h3>Voting is cool. Let us help you!</h3>
+                    <h1 id="first">POLL PAL</h1>
+            </div>  
+            <div className="col-lg-12" >
+                <h3 id="second">Voting is cool, let us help you</h3>
             </div>
         </div>
         <Countdown />
