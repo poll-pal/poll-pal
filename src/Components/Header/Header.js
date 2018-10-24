@@ -33,12 +33,21 @@ const Header = props => {
     return (
         // Displays content if user is not logged in.
         <nav className="navbar navbar-expand-lg justify-content-end" key="7">
-    
+            <li className="navbar-brand" key="8">
+                <Link to="/">
+                    <span className="navBrand">Poll Pall</span>
+                </Link>
+            </li>
             <ul className="navbar-nav">
                 {content}
                 <li className="nav-item" key="4">
+                    <Link to="/about">
+                        <span className="nav-link" key="5">About</span>
+                    </Link>
+                </li>
+                <li className="nav-item" key="6">
                     <Link to="/survey">
-                        <span className="nav-link" key="5">Get Started</span>
+                        <span className="nav-link" key="7">Get Started</span>
                     </Link>
                 </li>
             </ul>

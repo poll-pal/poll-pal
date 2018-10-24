@@ -1,17 +1,14 @@
-<<<<<<< HEAD
 .footer{
     right: 0;
     bottom: 0;
     left: 0;
     max-width: 100%;
 }
-=======
 
- .footer{
+.footer{
 padding: 10px;
 background-color: lightgray;
 }  
->>>>>>> c303f3ddbf5e21b7ee1e33f7a5c16cc4c02c8ca1
 
 .social{
     margin-right: 4px;
