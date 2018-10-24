@@ -2,8 +2,8 @@ import React from 'react'
 import { Link } from 'react-router-dom';
 import "./Footer.css";
 
-const Footer = props => (
-    <footer className="footer fixed-bottom ">
+const Footer = () => (
+    <footer className="footer fixed-bottom">
         <div className="container">
             <div className="row">
                 <div className="col-12 col-md">
