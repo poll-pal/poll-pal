@@ -28,7 +28,7 @@ class ZipCodeSearch extends Component {
             this.setState({ error: errorMsg })
         } else {
             let candidate = null;
-            axios.get('http://localhost:3000/api/candidates/?race=Colorado+House+of+Representatives+District+41').then(res => {
+            axios.get('http://localhost:3000/api/candidates/search?zip=' + this.state.zipCode).then(res => {
                 candidate = res.data;
                 let ballot = null;
                 axios.get('http://localhost:3000/api/ballotMeasures/?zip=' + this.state.zipCode).then(res => {
@@ -69,7 +69,7 @@ class ZipCodeSearch extends Component {
                 </form>
                 {this.state.apiBallot.map((ballot, index) => (
                     <div>
-                        <p>{ballot.name}</p>
+                        <BallotCard ballot={ballot.name} key={index} />
                     </div>
                 ))}
             </div>
