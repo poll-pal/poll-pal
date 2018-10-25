@@ -33,7 +33,7 @@ const UserProfile = props => {
                         </thead>
                         <tbody>
                             {props.user.districts.map(district => (
-                                <tr>
+                                <tr key={district.name}>
                                     <td>{district.name}</td>
                                     <td>{district.type}</td>
                                     <td>{district.state}</td>
