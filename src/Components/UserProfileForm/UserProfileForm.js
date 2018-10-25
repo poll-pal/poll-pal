@@ -21,9 +21,9 @@ class UserProfileForm extends Component {
     }
     getCandidates = (races) => {
         let race = races.pop();
-        if(race.name === undefined){
+        if (race.name === undefined) {
             console.table(this.state.candidates);
-            setTimeout(()=>{
+            setTimeout(() => {
                 this.props.updateUser({
                     candidates: this.state.candidates
                 });
@@ -31,8 +31,8 @@ class UserProfileForm extends Component {
             return;
         }
         axios.get(`http://api.ballotpedia.org/v3/api/1.1/tables/candidates/rows?access_token=go4tgNEaqfvaPuekckNGcMSclpVZtPrQ&filters[race_general_election_date][eq]=2018-11-06&filters[general_status][eq]=On+the+Ballot&filters[race_election_district_name][eq]=${race.name}&filters[race_office_district_state][eq]=${race.state}`)
-            .then(response =>{
-                if(response.data.data.length > 0){
+            .then(response => {
+                if (response.data.data.length > 0) {
                     this.state.candidates.push(response.data.data);
                     this.setState({
                         candidates: [].concat.apply([], this.state.candidates)
@@ -46,6 +46,7 @@ class UserProfileForm extends Component {
     }
 
     handleFormSubmit = (event) => {
+        console.log("I am happening");
         event.preventDefault();
         //Call this with the updated user from the form.
         this.props.updateUser({
@@ -56,7 +57,7 @@ class UserProfileForm extends Component {
             // party: this.state.party,
         });
         // This will be two API calls daisy chained.  
-        if(this.state.address !== this.state.originalAddress){
+        if (this.state.address !== this.state.originalAddress) {
             // GPS Coordinate Call
             axios.get(`../api/districts/?address=${this.state.address}`)
                 .then(response => {
@@ -75,7 +76,7 @@ class UserProfileForm extends Component {
                         });
                     });
                     console.table(races);
-                    
+
                     this.props.updateUser({
                         givenName: this.state.firstName,
                         familyName: this.state.lastName,
@@ -107,21 +108,21 @@ class UserProfileForm extends Component {
 
             content = (<form>
                 <div className="form-group">
-                    
+
                     <input type="text" className="form-control" id="firstName"
                         value={this.state.firstName}
                         onChange={this.handleInputChange}
                         name="firstName"
                         placeholder="First Name (required)" />
                     <label htmlFor="firstName">First name</label>
-                    
+
                     <input type="text" className="form-control" id="lastName"
                         value={this.state.lastName}
                         onChange={this.handleInputChange}
                         name="lastName"
                         placeholder="Last Name (required)" />
                     <label htmlFor="LastName">Last Name</label>
-                    
+
                     <input type="text" className="form-control" id="address"
                         value={this.state.address}
                         onChange={this.handleInputChange}

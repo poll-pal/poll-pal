@@ -15,7 +15,7 @@ const MainPage = () => (
                 <h3 id="second">Voting is cool, let us help you</h3>
             </div>
         </div>
-        <Countdown />
+        {/* <Countdown /> */}
         <ZipCodeSearch />
     </div>
 );

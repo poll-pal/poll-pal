@@ -1,27 +1,27 @@
 import React, { Component } from 'react';
 import "./ZipCodeSearch.css";
 import axios from 'axios';
+import BallotCard from '../BallotCard'
 
 class ZipCodeSearch extends Component {
 
-
-
     state = {
         zipCode: "",
-        apiBallot: null,
+        apiBallot: [],
         apiCandidate: null,
         error: null
     };
 
     validateZip = () => {
-        const { zipcode } = this.state
-        if (!zipcode) {
+        const { zipCode } = this.state
+        if (!zipCode) {
             return "You Must Enter A Zipcode";
         }
     }
 
     handleSubmit = event => {
         //add axios call here????
+
         event.preventDefault();
         const errorMsg = this.validateZip()
         if (errorMsg) {
@@ -30,13 +30,13 @@ class ZipCodeSearch extends Component {
             let candidate = null;
             axios.get('http://localhost:3000/api/candidates/?race=Colorado+House+of+Representatives+District+41').then(res => {
                 candidate = res.data;
-            });
-            let ballot = null;
-            axios.get('http://localhost:3000/api/ballotMeasures/?zip=' + this.state.zipCode).then(res => {
-                ballot = res.data;
+                let ballot = null;
+                axios.get('http://localhost:3000/api/ballotMeasures/?zip=' + this.state.zipCode).then(res => {
+                    ballot = res.data;
+                    this.setState({ error: null, apiCandidate: candidate, apiBallot: ballot, });
+                });
             });
 
-            this.setState({ zipCode: "", error: null, apiCandidate: candidate, apiBallot: ballot, });
         }
     }
 
@@ -49,23 +49,30 @@ class ZipCodeSearch extends Component {
 
 
     render() {
+        console.log(this.state);
         return (
-            <form className="zipForm" >
-                < div className="row justify-content-center" >
-                    <div className="col-md-3 searchContainer">
-                        <input
-                            className="form-control"
-                            id="zipSearch"
-                            type="text"
-                            placeholder="Enter Your Zip Code"
-                            value={this.state.zipCode}
-                            onChange={this.handleInputChange}
-                            onSubmit={this.handleSubmit}
-                        />
+            <div>
+                <form className="zipForm" onSubmit={this.handleSubmit} >
+                    < div className="row justify-content-center" >
+                        <div className="col-md-3 searchContainer">
+                            <input
+                                className="form-control"
+                                id="zipSearch"
+                                type="text"
+                                placeholder="Enter Your Zip Code"
+                                value={this.state.zipCode}
+                                onChange={this.handleInputChange}
+                            />
+                        </div>
                     </div>
-                </div>
-                {this.state.error ? <p className="validationAlert">{this.state.error}</p> : <p></p>}
-            </form>
+                    {this.state.error ? <p className="validationAlert">{this.state.error}</p> : <p></p>}
+                </form>
+                {this.state.apiBallot.map((ballot, index) => (
+                    <div>
+                        <p>{ballot.name}</p>
+                    </div>
+                ))}
+            </div>
         )
     }
 
@@ -75,9 +82,9 @@ class ZipCodeSearch extends Component {
 export default ZipCodeSearch;
 
 
-// Schuyler [7:18 PM]
-// http://localhost:3000/api/candidates/?race=Colorado+House+of+Representatives+District+41
+                // Schuyler [7:18 PM]
+                // http://localhost:3000/api/candidates/?race=Colorado+House+of+Representatives+District+41
 
 
-// Schuyler [8:34 PM]
-// Here's the ballot measures endpoint http://localhost:3000/api/ballotMeasures/?zip=80004
+                // Schuyler [8:34 PM]
+                // Here's the ballot measures endpoint http://localhost:3000/api/ballotMeasures/?zip=80004

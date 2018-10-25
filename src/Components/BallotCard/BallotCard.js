@@ -2,7 +2,7 @@ import React from "react";
 import "./BallotCard.css";
 import Footer from '../Footer';
 
-const BallotCard = () => (
+const BallotCard = props => (
     <div className="container">
         <div className="row ballotMain">
             <div className="col-lg-6 col-sm-12">
