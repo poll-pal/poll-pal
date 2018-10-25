@@ -77,4 +77,6 @@ var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/pollPal";
 mongoose.Promise = Promise;
 mongoose.connect(MONGODB_URI);
 
+console.log('hello');
+
 module.exports = app;
