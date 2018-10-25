@@ -7,7 +7,8 @@ const BP_URL = `http://api.ballotpedia.org/v3/api/1.1/tables/candidates/rows?acc
 const districts = require('./district');
 const geocoder = require('./geocode');
 const districtsArray = [];
-var candidatesArray = []; 
+var candidatesArray = [];
+var sentReply = true; 
 
 /* 
  * @function getCandidates - this will return candidates using the 'race_election_district_name' attribute returned in the 'district' API calls
@@ -20,7 +21,9 @@ const getCandidate = () =>{
 
 const getCandidates = (racesArray, callback = null) => {
     let race = racesArray.pop();
-    
+    if(race.name === undefined){
+        return;
+    }
     let uri = BP_URL + race.name + "&filters[race_office_district_state][eq]=" + race.state;
     console.log(uri);
     axios.get(uri)
@@ -31,14 +34,15 @@ const getCandidates = (racesArray, callback = null) => {
                 candidatesArray.push(response.data.data);
                 candidatesArray = [].concat.apply([], candidatesArray);
             }
-            if(racesArray.length === 0){
+            if(racesArray.length === 0 && !sentReply){
+                sentReply = true;
                 // We're done
                 setTimeout(()=>{
                     console.log("ALL DONE!!!!!!!!!!!!")
                     console.log(candidatesArray);
-                    callback.json(candidatesArray);
+                    callback.status(200).json(candidatesArray);
                     return;
-                }, 2000);
+                }, 3000);
             }
         })
         .catch(err => console.log(err.message));
@@ -46,6 +50,7 @@ const getCandidates = (racesArray, callback = null) => {
 };
 
 const getCandidatesByZip = (postalCode, expRes = null) => {
+    sentReply = false;
     geocoder.geocode(postalCode, districtsCallback, expRes);
 };
 
