@@ -21,6 +21,21 @@ const getDistrictsLatLng = (latLng, callback = null) => {
         .catch(err => console.log(err.message));
 };
 
+const getDistrictsModule = (latLng, callback = null, res) => {
+    let uri = BP_URL + latLng.join(',');
+    console.log(uri);
+    axios.get(uri)
+        .then(response => {
+            if(callback){
+                callback(response.data, res);
+            }
+            else{
+                console.log(response.data);
+            }
+    })
+        .catch(err => console.log(err.message));
+};
+
 const getDistrictsByAddress = (address, callback = null) => {
     // TODO - Convert address to coords
     axios.get(MQ_API+address).then(geoResponse => {
@@ -32,7 +47,7 @@ const getDistrictsByAddress = (address, callback = null) => {
                 callback.json(response.data);
             }
             else{
-                console.log(response.data);
+                return response.data;
             }
         })  
         .catch(err => console.log(err.message));
@@ -43,7 +58,8 @@ const getDistrictsByAddress = (address, callback = null) => {
 
 module.exports = {
     getDistrictsLatLng: getDistrictsLatLng,
-    getDistrictsByAddress: getDistrictsByAddress
+    getDistrictsByAddress: getDistrictsByAddress,
+    getDistrictsModule: getDistrictsModule
 }
 // Test API Call - Uncomment below
 // getDistrictsLatLng([39.4711, -104.7890])
