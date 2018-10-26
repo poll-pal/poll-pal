@@ -8,7 +8,7 @@ class ZipCodeSearch extends Component {
     state = {
         zipCode: "",
         apiBallot: [],
-        apiCandidate: null,
+        apiCandidate: [],
         error: null
     };
 
@@ -65,13 +65,13 @@ class ZipCodeSearch extends Component {
                             />
                         </div>
                     </div>
-                    {this.state.error ? <p className="validationAlert">{this.state.error}</p> : <p></p>}
                 </form>
-                {this.state.apiBallot.map((ballot, index) => (
-                    <div>
-                        <BallotCard ballot={ballot.name} key={index} />
-                    </div>
-                ))}
+
+                <div className="row">
+                    {this.state.apiBallot.length || this.state.apiCandidate.length ?
+                        <BallotCard ballots={this.state.apiBallot} candidates={this.state.apiCandidate} /> : <p></p>}
+                </div>
+
             </div>
         )
     }

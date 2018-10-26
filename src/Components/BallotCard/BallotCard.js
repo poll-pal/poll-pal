@@ -1,6 +1,9 @@
 import React from "react";
 import "./BallotCard.css";
 import Footer from '../Footer';
+import InitiativeCard from '../InitiativeCard';
+import CandidateCard from '../CandidateCard';
+
 
 const BallotCard = props => (
     <div className="container">
@@ -24,27 +27,25 @@ const BallotCard = props => (
                 <h2>Candidates in Your District</h2>
             </div>
         </div>
+        <div className="row">
+            {props.candidates.map((candidate, index) => (
+                <CandidateCard candidate={candidate} key={index} />
+            ))}
+        </div>
 
-        <div className="row ballotCard">
-            <div className="col-lg-4 col-sm-12">
-                <div className="card">
-                    <div className="card-body">
-                        <h3 className="card-title">Beto O'Rourke</h3>
-                        <h4>Senate</h4>
-                        <h5>Democratic Party</h5>
-                        <p>
-                            <span>website</span>
-                            <span> | <i className="fab fa-twitter fa-sm"></i></span>
-                        </p>
-                    </div>
-                    <div className="row">
-                        <div className="col-lg-12">
-                            <span><button type="button" className="btn btn-success">Vote Yes</button></span>&nbsp;&nbsp;<span><button type="button" className="btn btn-danger">Vote No</button></span>
-                        </div>
-                    </div>
-                </div>
+
+        <div className="row">
+            <div className="col-lg-12 InitiativeResults">
+                <h2>Initiatives in Your District</h2>
             </div>
         </div>
+        <div className="row">
+            {props.ballots.map((ballot, index) => (
+                <InitiativeCard ballot={ballot} key={index} />
+            ))}
+        </div>
+
+
         <Footer />
     </div>
 );
