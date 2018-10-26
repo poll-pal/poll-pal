@@ -3,29 +3,52 @@
 .navbar-brand {
     font-family: 'Oxygen', sans-serif, bold;
     font-size: 50px;
+    color: aliceblue;
 }
 
 .nav-item {
     font-family: 'Oxygen', sans-serif;
     font-size: 20px;
     color: aliceblue;
-    text-align: right; 
+    text-align: center; 
 }
 
-.navBrand {
-    font-family: 'Oxygen', sans-serif;
-    float: left;
-    font-size: 20px;
-    color: aliceblue;
-}
 
 .nav-link {
     font-family: 'Oxygen', sans-serif;
     font-size: 20px;
     color: aliceblue;
-    text-align: right;
+    text-align: center;
 }
 
 .mr-auto {
     color: white;
+}
+
+.navbar-toggler{
+    position: absolute;
+    top: 20%;
+    right: 5%;
+    font-size: 3rem;
+    color: aliceblue;
+}
+.logout{
+    position: relative;
+    font-size: 1.5vw;
+    left: 1.7vw;
+}
+.profile{
+    padding-right: 30px !important;
+}
+
+.userName{
+    position: relative;
+    left: 1.5vw;
+    font-size: 1.8vw;
+}
+
+.profilePic{
+    position: relative;
+    left: 1.5vw;
+    width: 4vw;
 }
