@@ -12,45 +12,49 @@ const Header = props => {
     );
     // Navbar content if user is logged in
     if (props.user) {
-        content = [
-            <li className="nav-item" key="1">
-                <span className="navbar-text">Hello, {props.user.givenName}</span>
-            </li>,
-            <li className="nav-item" key="2">
-                <Link to="/user">
+        content = 
+            <div className="profile nav-item text-center">
+                <Link to="/user" className="nav-link" key="1">
+                    <span className="userName">{props.user.givenName}</span><br/>
                     <img
-                        style={{ borderRadius: '50%', padding: '8px 8px' }}
+                        className="profilePic"
+                        style={{ borderRadius: '50%', marginTop:'10%'}}
                         src={props.user.imageURL}
                         alt="User profile"
                     />
                 </Link>
-            </li>,
-            <li className="nav-item" key="3">
-                <a className="nav-link" href="/auth/logout">Logout</a>
-            </li>
-        ];
+                <a className="logout nav-link" href="/auth/logout">Logout <i className="fas fa-sign-out-alt"></i></a>
+            </div>
     }
     return (
         // Displays content if user is not logged in.
-        <nav className="navbar navbar-expand-lg justify-content-end" key="7">
-            <li className="navbar-brand" key="8">
-                <Link to="/">
-                    <span className="navBrand">Poll Pall</span>
+        <nav className="navbar navbar-expand-md" key="7">
+            <div className="d-flex w-100 order-0">
+                <Link to="/" className="navbar-brand mr-1">
+                    <span className="navBrand">Poll Pal</span>
                 </Link>
-            </li>
-            <ul className="navbar-nav">
-                {content}
-                <li className="nav-item" key="4">
+                <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsingNavbar">
+                    <i className="fas fa-bars"></i>
+                </button>
+            </div>
+            <div className="navbar-collapse collapse justify-content-between align-items-center w-50" id="collapsingNavbar">
+                <ul className="navbar-nav mx-auto text-center">
                     <Link to="/about">
-                        <span className="nav-link" key="5">About</span>
+                        <li className="nav-item" key="4">
+                            <span className="nav-link" key="5">About</span>
+                        </li>  
                     </Link>
-                </li>
-                <li className="nav-item" key="6">
                     <Link to="/survey">
-                        <span className="nav-link" key="7">Get Started</span>
+                        <li className="nav-item" key="6">
+                            <span className="nav-link" key="7">Get Started</span>
+                        </li>
                     </Link>
-                </li>
-            </ul>
+                </ul>
+                <ul className="nav navbar-nav flex-row justify-content-center flex-nowrap">
+                {content}
+                </ul>
+            </div>
+            
         </nav>
     );
 };
