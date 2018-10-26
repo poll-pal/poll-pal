@@ -9,7 +9,8 @@ class ZipCodeSearch extends Component {
         zipCode: "",
         apiBallot: [],
         apiCandidate: [],
-        error: null
+        error: null,
+        laoding: false
     };
 
     validateZip = () => {
@@ -27,13 +28,14 @@ class ZipCodeSearch extends Component {
         if (errorMsg) {
             this.setState({ error: errorMsg })
         } else {
+            this.setState({ loading: true })
             let candidate = null;
             axios.get('http://localhost:3000/api/candidates/search?zip=' + this.state.zipCode).then(res => {
                 candidate = res.data;
                 let ballot = null;
                 axios.get('http://localhost:3000/api/ballotMeasures/?zip=' + this.state.zipCode).then(res => {
                     ballot = res.data;
-                    this.setState({ error: null, apiCandidate: candidate, apiBallot: ballot, });
+                    this.setState({ error: null, apiCandidate: candidate, apiBallot: ballot, loading: false });
                 });
             });
 
@@ -66,6 +68,8 @@ class ZipCodeSearch extends Component {
                         </div>
                     </div>
                 </form>
+
+                <div>{this.state.loading ? <p className="spinner">Loading Please Wait</p> : <p></p>}</div>
 
                 <div className="row">
                     {this.state.apiBallot.length || this.state.apiCandidate.length ?
