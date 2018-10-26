@@ -29,8 +29,6 @@ const getCandidates = (racesArray, callback = null) => {
     axios.get(uri)
         .then(response => {
             if(response.data.data.length > 0){
-                console.log(response.data);
-                console.log('****************');
                 candidatesArray.push(response.data.data);
                 candidatesArray = [].concat.apply([], candidatesArray);
             }
@@ -38,8 +36,6 @@ const getCandidates = (racesArray, callback = null) => {
                 sentReply = true;
                 // We're done
                 setTimeout(()=>{
-                    console.log("ALL DONE!!!!!!!!!!!!")
-                    console.log(candidatesArray);
                     callback.status(200).json(candidatesArray);
                     return;
                 }, 3000);

@@ -6,7 +6,7 @@ import ZipCodeSearch from '../ZipCodeSearch/';
 
 
 const MainPage = () => (
-    <div className="container">
+    <div className="container" id="greeting">
         <div className="row">
             <div className="col-lg-12">
                 <h1 id="first">POLL PAL</h1>

@@ -17,6 +17,10 @@ body{
 
 }
 
+#greeting{
+  margin-top:80px;
+}
+
 #first{
   color: aliceblue;
   text-align: center;
