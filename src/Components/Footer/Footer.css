@@ -3,11 +3,12 @@
     bottom: 0;
     left: 0;
     max-width: 100%;
+    position: fixed;
+    height: 120px;
 }
 
 .footer{
 padding: 10px;
-background-color: lightgray;
 }  
 
 .social{
