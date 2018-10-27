@@ -28,8 +28,12 @@
     transition: 0.3s;
 }
 
-.candidateList {
+.resultsList {
     padding-left: 60px;
+}
+
+.initiaveRow {
+    margin-top: 5%;
 }
 
 .ballotCard {
