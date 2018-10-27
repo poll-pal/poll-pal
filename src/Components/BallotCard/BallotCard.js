@@ -4,21 +4,23 @@ import Footer from '../Footer';
 import InitiativeCard from '../InitiativeCard';
 import CandidateCard from '../CandidateCard';
 
-
 const BallotCard = props => (
-    <div className="container">
+    <div className="container districtBallot">
         <div className="row ballotMain">
-            <div className="col-lg-6 col-sm-12 text-center">
+            {/* <div className="col-lg-6 col-sm-12 text-center">
                 <img src="img/ballot-page.png" alt="Vote" className="ballotPageImg rounded img-fluid" />
-            </div>
-            <div className="col-lg-6 col-sm-12 ballotDescription">
-                <h1 className="text-center">Your District Ballot</h1>
+            </div> */}
+            <div className="col-lg-12 col-sm-12 ballotDescription">
+                <h1 className="ballotHeader">Your District Ballot</h1>
                 <br />
                 <p className="ballotWelcome">
+                    <b>Please note this is not a real ballot (obviously).</b><br/>
                     Be part of the change in your community by casting your vote! Discover who's running in your district and
                     find out what candidates you might identify with best, then visit their website and social media platforms to
                     learn even more about what they stand for. Keep scrolling for state and county ballot initiatives so you're ready
-                    to fill out that ballot in style! Just Vote Yes or Vote No and then pull up your Poll Pal to help you out!
+                    to fill out that ballot in style! Because voting is cool.*
+                    <br/>
+                    <em>*Some reading required.</em>
                 </p>
             </div>
         </div>
@@ -27,15 +29,13 @@ const BallotCard = props => (
                 <h2>Candidates in Your District</h2>
             </div>
         </div>
-        <div className="row">
+        <div className="row candidateList">
             {props.candidates.map((candidate, index) => (
                 <CandidateCard candidate={candidate} key={index} />
             ))}
         </div>
-
-
         <div className="row">
-            <div className="col-lg-12 InitiativeResults">
+            <div className="col-lg-12 col-xs-12 InitiativeResults">
                 <h2>Initiatives in Your District</h2>
             </div>
         </div>
@@ -44,31 +44,8 @@ const BallotCard = props => (
                 <InitiativeCard ballot={ballot} key={index} />
             ))}
         </div>
-
-
         <Footer />
     </div>
 );
 
 export default BallotCard;
-
-// ========= UNCOMMENT THIS OUT WHEN WE HAVE DATA ================
-// Displays the ballot measure or candidate
-// const BallotCard = props => {
-//     let content =  
-//     <div className="container">
-//         <div className="row">
-//             <div className="col-lg-12">
-//                 <h1>Candidates in Your District</h1>
-//             </div>
-//         </div>
-
-//         <div className="card">
-//             <img src="" alt="John Doe" className="candidateImage" />
-//             <h3>{props.CandidateSchema.name}</h3>
-//             <h4>Running For: {props.CandidateSchema.race}</h4>
-//             <h5>Party: {props.CandidateSchema.party}</h5>
-//         </div>
-//     </div>;
-//     return content;
-// };
