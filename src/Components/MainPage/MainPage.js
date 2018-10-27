@@ -8,9 +8,10 @@ import ZipCodeSearch from '../ZipCodeSearch/';
 const MainPage = () => (
     <div className="container" id="greeting">
         <div className="row">
-            <div className="col-lg-12">
-                <h1 id="first">Poll Pal</h1>
+            <div className="col-lg-12 text-center">
+            <img src='img/logo-1.png'  className="img-fluid logo" />
             </div>
+
             <div className="col-lg-12" >
                 <h3 id="second">Voting is cool, let us help you</h3>
             </div>
@@ -18,6 +19,7 @@ const MainPage = () => (
         {/* <Countdown /> */}
         <ZipCodeSearch />
     </div>
+
 );
 
 export default MainPage;
