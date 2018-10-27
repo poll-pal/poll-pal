@@ -5,7 +5,7 @@ import InitiativeCard from '../InitiativeCard';
 import CandidateCard from '../CandidateCard';
 
 const BallotCard = props => (
-    <div className="container">
+    <div className="container districtBallot">
         <div className="row ballotMain">
             {/* <div className="col-lg-6 col-sm-12 text-center">
                 <img src="img/ballot-page.png" alt="Vote" className="ballotPageImg rounded img-fluid" />
@@ -29,7 +29,7 @@ const BallotCard = props => (
                 <h2>Candidates in Your District</h2>
             </div>
         </div>
-        <div className="row">
+        <div className="row candidateList">
             {props.candidates.map((candidate, index) => (
                 <CandidateCard candidate={candidate} key={index} />
             ))}
