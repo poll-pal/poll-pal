@@ -1,24 +1,11 @@
-.container {
-    /* padding-right: 0px;
-    padding-left: 0px; */
-    max-width: 100%; 
-    min-height: 100%;
-
-}
 
 .ballotMain {
     margin-top: 3%;
 }
 
 .ballotPageImg {
-    height: 500px;
-    width: 400px;
-    float: right;
-}
-
-.ballotDescription {
-    padding-right: 250px;
-
+    max-width: 400px;
+    box-shadow: 2px 2px 3px rgba(0,0,0,0.4);
 }
 
 .card {

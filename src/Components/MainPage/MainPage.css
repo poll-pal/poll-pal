@@ -1,7 +1,6 @@
-@import url('https://fonts.googleapis.com/css?family=Noto+Serif|Oxygen');
 
 body{
-  background-image: url('../MainPage/background-3.jpg');
+  background-image: url('background-3.jpg');
   width: 100%;
   height: auto;
   padding-bottom: 64%;
@@ -25,13 +24,14 @@ body{
   color: aliceblue;
   text-align: center;
   font-size: 80px;
-
+  text-shadow: -2px 2px 5px black;
 }
 
 #second {
   color: aliceblue;
   text-align: center;
   font-size: 40px;
+  text-shadow: -2px 2px 5px black;
 }
 
 .formControl {
