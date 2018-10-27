@@ -1,3 +1,33 @@
 .about {
-    background-image: none;
+    background-color: rgb(255,255,255, .7);
+    border-radius: 25px;
+}
+
+.aboutImg {
+    padding: 20px;
+    height: 550px;
+    width: 420px;
+    float: right;
+    border-radius: 15px;
+}
+
+.aboutTitle {  
+    color: #E5006B;
+    font-family: 'Patua One', cursive;
+}
+
+.aboutCopy {
+    margin-top: 5%;
+}
+
+.aboutPrghOne {
+    margin-right: 150px;
+    font-family: 'Pragati Narrow', sans-serif;
+    font-size: 20px;
+}
+
+.aboutPrghTwo {
+    margin-right: 150px;
+    font-family: 'Pragati Narrow', sans-serif;
+    font-size: 20px;
 }

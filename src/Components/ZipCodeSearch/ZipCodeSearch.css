@@ -1,8 +1,9 @@
 .zipForm{
     margin-top: 150px;
     text-align: center;
-    margin-right: auto;
-    margin-left: auto;
+    color: white;
+    /* margin-right: auto;
+    margin-left: auto; */
     
 }
 
@@ -10,8 +11,14 @@
 #zipSearch{
     text-align: center;
     font-size: 30px;
-
+    text-shadow:1px 1px 3px rgba(200,200,200,0.6);
+    color: white !important;
 }
+
+#zipSearch:focus{
+    background-color: transparent;
+}
+
 
 
 .spinner{

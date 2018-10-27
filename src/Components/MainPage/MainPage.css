@@ -1,7 +1,6 @@
-@import url('https://fonts.googleapis.com/css?family=Noto+Serif|Oxygen');
 
 body{
-  background-image: url('../MainPage/background-3.jpg');
+  background-image: url('samuel-branch-442129-unsplash\ copy.jpg');
   width: 100%;
   height: auto;
   padding-bottom: 64%;
@@ -21,17 +20,16 @@ body{
   margin-top:80px;
 }
 
-#first{
-  color: aliceblue;
-  text-align: center;
-  font-size: 80px;
-
+.logo{
+  max-width: 600px;
 }
 
 #second {
-  color: aliceblue;
+  color: white;
   text-align: center;
   font-size: 40px;
+  text-shadow: -1px 1px 3px #FFB106;
+  font-family: 'Patua One', cursive;
 }
 
 .formControl {
@@ -42,12 +40,12 @@ input[type="text"],
 select.form-control {
   background: transparent;
   border: none;
-  border-bottom: 1px solid #000000;
-  color: aliceblue;
+  border-bottom: 3px solid #FBA304;
+  color: white !important;
   -webkit-box-shadow: none;
   box-shadow: none;
   border-radius: 0;
-  font-size: 22px;
+  font-size: 25px;
   margin-top: 4%;
 }
 
@@ -55,5 +53,9 @@ input[type="text"]:focus,
 select.form-control:focus {
   -webkit-box-shadow: none;
   box-shadow: none;
+}
+
+input[type="text"]::-webkit-input-placeholder {
+  color: white;
 }
 
