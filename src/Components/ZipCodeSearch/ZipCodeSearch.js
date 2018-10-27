@@ -56,7 +56,7 @@ class ZipCodeSearch extends Component {
             <div>
                 <form className="zipForm" onSubmit={this.handleSubmit} >
                     < div className="row justify-content-center" >
-                        <div className="col-md-3 searchContainer">
+                        <div className="col-md-6 searchContainer">
                             <input
                                 className="form-control"
                                 id="zipSearch"

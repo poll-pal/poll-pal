@@ -10,7 +10,11 @@
 #zipSearch{
     text-align: center;
     font-size: 30px;
+    text-shadow: -1px -1px 3px black;
+}
 
+#zipSearch:focus{
+    background-color: darkgrey;
 }
 
 

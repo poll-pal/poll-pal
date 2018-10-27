@@ -9,7 +9,7 @@ const MainPage = () => (
     <div className="container" id="greeting">
         <div className="row">
             <div className="col-lg-12">
-                <h1 id="first">POLL PAL</h1>
+                <h1 id="first">Poll Pal</h1>
             </div>
             <div className="col-lg-12" >
                 <h3 id="second">Voting is cool, let us help you</h3>

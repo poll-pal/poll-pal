@@ -8,11 +8,11 @@ import CandidateCard from '../CandidateCard';
 const BallotCard = props => (
     <div className="container">
         <div className="row ballotMain">
-            <div className="col-lg-6 col-sm-12">
-                <img src="img/ballot-page.png" alt="Vote" className="ballotPageImg" />
+            <div className="col-lg-6 col-sm-12 text-center">
+                <img src="img/ballot-page.png" alt="Vote" className="ballotPageImg rounded img-fluid" />
             </div>
             <div className="col-lg-6 col-sm-12 ballotDescription">
-                <h1>Your District Ballot</h1>
+                <h1 className="text-center">Your District Ballot</h1>
                 <br />
                 <p className="ballotWelcome">
                     Be part of the change in your community by casting your vote! Discover who's running in your district and
