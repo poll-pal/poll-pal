@@ -29,7 +29,7 @@ const BallotCard = props => (
         </div>
         <div className="row">
             {props.candidates.map((candidate, index) => (
-                <CandidateCard candidate={candidate} key={index} />
+                <CandidateCard candidate={candidate} key={index} user={props.user} updateUser={props.updateUser} />
             ))}
         </div>
 
@@ -41,7 +41,7 @@ const BallotCard = props => (
         </div>
         <div className="row">
             {props.ballots.map((ballot, index) => (
-                <InitiativeCard ballot={ballot} key={index} />
+                <InitiativeCard ballot={ballot} key={index} user={props.user} updateUser={props.updateUser} />
             ))}
         </div>
 

@@ -5,7 +5,7 @@ import Countdown from '../Countdown/';
 import ZipCodeSearch from '../ZipCodeSearch/';
 
 
-const MainPage = () => (
+const MainPage = (props) => (
     <div className="container" id="greeting">
         <div className="row">
             <div className="col-lg-12">
@@ -16,7 +16,7 @@ const MainPage = () => (
             </div>
         </div>
         {/* <Countdown /> */}
-        <ZipCodeSearch />
+        <ZipCodeSearch user={props.user} updateUser={props.updateUser} />
     </div>
 );
 

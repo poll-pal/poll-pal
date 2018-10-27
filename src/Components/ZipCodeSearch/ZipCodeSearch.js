@@ -36,6 +36,8 @@ class ZipCodeSearch extends Component {
                 axios.get('http://localhost:3000/api/ballotMeasures/?zip=' + this.state.zipCode).then(res => {
                     ballot = res.data;
                     this.setState({ error: null, apiCandidate: candidate, apiBallot: ballot, loading: false });
+                    console.log(ballot);
+                    console.log(candidate);
                 });
             });
 
@@ -73,7 +75,7 @@ class ZipCodeSearch extends Component {
 
                 <div className="row">
                     {this.state.apiBallot.length || this.state.apiCandidate.length ?
-                        <BallotCard ballots={this.state.apiBallot} candidates={this.state.apiCandidate} /> : <p></p>}
+                        <BallotCard user={this.props.user} ballots={this.state.apiBallot} candidates={this.state.apiCandidate} updateUser={this.props.updateUser} /> : <p></p>}
                 </div>
 
             </div>
