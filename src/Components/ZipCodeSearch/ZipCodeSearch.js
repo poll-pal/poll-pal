@@ -71,7 +71,7 @@ class ZipCodeSearch extends Component {
                     </div>
                 </form>
 
-                <div>{this.state.loading ? <p className="spinner">Loading Please Wait</p> : <p></p>}</div>
+                <div>{this.state.loading ? <p> <i className="fas fa-spinner"></i> Loading Please Wait</p> : <p></p>}</div>
 
                 <div className="row">
                     {this.state.apiBallot.length || this.state.apiCandidate.length ?
