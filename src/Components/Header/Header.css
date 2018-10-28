@@ -1,5 +1,11 @@
 @import url('https://fonts.googleapis.com/css?family=Noto+Serif|Oxygen');
 
+
+#collapsingNavbar{
+    position: relative;
+    margin-top: 14vh;
+}
+
 .navbar-brand {
     font-family: 'Oxygen', sans-serif, bold;
     font-size: 50px;
@@ -10,7 +16,7 @@
     font-family: 'Oxygen', sans-serif;
     font-size: 20px;
     color: aliceblue;
-    text-align: center; 
+    text-align: right; 
 }
 
 
@@ -18,7 +24,7 @@
     font-family: 'Oxygen', sans-serif;
     font-size: 20px;
     color: aliceblue;
-    text-align: center;
+    text-align: right;
 }
 
 .mr-auto {
@@ -27,8 +33,8 @@
 
 .navbar-toggler{
     position: absolute;
-    top: 20%;
-    right: 5%;
+    top: 25%;
+    right: 0%;
     font-size: 3rem;
     color: aliceblue;
 }
@@ -49,6 +55,62 @@
 
 .profilePic{
     position: relative;
-    left: 1.5vw;
     width: 4vw;
 }
+
+.navbar-toggler {
+    border: none;
+    background: transparent !important;
+  }
+  
+  .navbar-toggler:focus {
+    outline: none;
+    background: transparent !important;
+  }
+  
+  .navbar-toggler .icon-bar {
+    background-color: #fff;
+    transform: rotate(0deg) translate(0px, 0px);
+    transition: ease all .2s;
+  }
+  
+  .navbar-toggler .icon-bar {
+    display: block;
+    width: 30px;
+    height: 4px;
+    border-radius: 1px;
+  }
+  
+  .navbar-toggler .icon-bar+.icon-bar {
+    margin-top: 4px;
+  }
+  
+  .icon-bar:nth-child(2) {
+    width: 16px;
+    transition: ease all .2s;
+  }
+  
+  .navbar-toggler:hover>.icon-bar:nth-child(2) {
+    width: 30px;
+    transition: ease all .2s;
+  }
+  
+  .navbar-toggler:active>.icon-bar:nth-child(2) {
+    width: 30px;
+    transition: ease all .2s;
+  }
+  
+  .navbar-toggler:not(.collapsed) .icon-bar:nth-child(1) {
+    transform: rotate(45deg) translate(7px, 4px);
+    transition: ease all .2s;
+  }
+  
+  .navbar-toggler:not(.collapsed) .icon-bar:nth-child(2) {
+    opacity: 0;
+    transition: ease all .2s;
+  }
+  
+  .navbar-toggler:not(.collapsed) .icon-bar:nth-child(3) {
+    transform: rotate(-45deg) translate(7px, -4px);
+    transition: ease all .2s;
+  }
