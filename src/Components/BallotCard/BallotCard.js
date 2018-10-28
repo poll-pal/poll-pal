@@ -14,12 +14,12 @@ const BallotCard = props => (
                 <h1 className="ballotHeader">Your District Ballot</h1>
                 <br />
                 <p className="ballotWelcome">
-                    <b>Please note this is not a real ballot (obviously).</b><br/>
+                    <b>Please note this is not a real ballot (obviously).</b><br />
                     Be part of the change in your community by casting your vote! Discover who's running in your district and
                     find out what candidates you might identify with best, then visit their website and social media platforms to
                     learn even more about what they stand for. Keep scrolling for state and county ballot initiatives so you're ready
                     to fill out that ballot in style! Because voting is cool.*
-                    <br/>
+                    <br />
                     <em>*Some reading required.</em>
                 </p>
             </div>
@@ -43,15 +43,12 @@ const BallotCard = props => (
             {props.ballots.map((ballot, index) => {
                 //Look up this ballot on the user by id
                 //so you can pass in current vote value
-                const ballotInitiative = props.user.ballotInitiatives.find(bi => bi.id === ballot.id);
-                const choice = ballotInitiative ? ballotInitiative.choice : null;
                 return (
                     <InitiativeCard
                         ballot={ballot}
                         key={index}
                         user={props.user}
-                        updateUser={props.updateUser}
-                        choice={choice} />
+                        updateUser={props.updateUser} />
                 );
             }
             )}
