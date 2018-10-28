@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import "./InitiativeCard.css";
 
 class InitiativeCard extends Component {
-
     handleYesVoteClick = (event) => {
         console.log("you clicked yes on a initiative")
         const ballotInitiative = {
@@ -46,7 +45,7 @@ class InitiativeCard extends Component {
                         </div>
                         <div className="row">
                             <div className="col-lg-12">
-                                <span><button onClick={this.handleYesVoteClick} type="submit" className="btn btn-success">Vote Yes</button></span>&nbsp;&nbsp;<span><button onClick={this.handleNoVoteClick} type="submit" className="btn btn-danger">Vote No</button></span>
+                                <span><button onClick={this.handleYesVoteClick} type="submit" className="btn btn-yes">Vote Yes</button></span>&nbsp;&nbsp;<span><button onClick={this.handleNoVoteClick} type="submit" className="btn btn-no">Vote No</button></span>
                             </div>
                         </div>
                     </div>

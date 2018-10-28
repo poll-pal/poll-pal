@@ -1,3 +1,13 @@
+.btn-yes {
+    background-color: #F308CF;
+    color: white;
+}
+
+.btn-no {
+    background-color: #00223B;
+    color: white;
+}
+
 .card{
     width: 300px !important;
     height: 300px;

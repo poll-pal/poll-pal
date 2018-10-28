@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import "./CandidateCard.css";
 
-
 class CandidateCard extends Component {
 
     handleYesVoteClick = (event) => {
@@ -40,39 +39,24 @@ class CandidateCard extends Component {
 
     render() {
         return (
-            <div>
-                <div className="col">
-                    <div className="card">
-                        <div className="card-body">
-                            <h3 className="card-title">{this.props.candidate.person_name}</h3>
-
-                            {/* need to grab these */}
-                            <h4>{this.props.candidate.race_office_name}</h4>
-                            <h5>{this.props.candidate.part_affiliation}</h5>
-                            <p>
-                                <span>{this.props.candidate.campaign_website_url}</span>
-                                <span> {this.props.candidate.campaign_twitter} | <i className="fab fa-twitter fa-sm"></i></span>
-                            </p>
-                        </div>
-                        <div className="row">
-                            <div className="col-lg-12">
-                                <span>
-                                    <button
-                                        onClick={this.handleYesVoteClick}
-                                        type="button"
-                                        className="btn btn-success">Vote Yes</button>
-                                </span>&nbsp;&nbsp;
-                                <span>
-                                    <button
-                                        onClick={this.handleNoVoteClick}
-                                        type="button"
-                                        className="btn btn-danger">Vote No</button>
-                                </span>
-                            </div>
-                        </div>
-                    </div>
+            <div className="mainBallotCard">
+        <div className="col-lg-12 col-xs-12">
+            <div className="card">
+                <div className="card-body">
+                    <h3 className="card-title">{this.props.candidate.person_name}</h3>
+                    {/* need to grab these */}
+                    <h4 className="cadidateOffice">{this.props.candidate.race_office_name}</h4>
+                    <h5 className="cadidateParty">{this.props.candidate.part_affiliation}</h5>
+                    <p>
+                        <span><a href="{this.props.candidate.campaign_website_url}" target="_blank">website</a></span> | 
+                        <span><a href="{this.props.candidate.campaign_twitter}" target="_blank"><i className="fab fa-twitter fa-sm"></i></a></span>
+                    </p>
+                    <br/>
+                    <span><button type="button" className="btn btn-yes" onClick={this.handleYesVoteClick}>Vote Yes</button></span>&nbsp;&nbsp;<span><button type="button" className="btn btn-no" onClick={this.handleNoVoteClick}>Vote No</button></span>
                 </div>
             </div>
+        </div>
+    </div>
 
         );
     }
