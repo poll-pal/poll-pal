@@ -42,6 +42,7 @@ class InitiativeCard extends Component {
                         <div className="card-body">
                             <h3 className="card-title">{}</h3>
                             <p>{this.props.ballot.name}</p>
+                            <p>{this.props.choice}</p>
                         </div>
                         <div className="row">
                             <div className="col-lg-12">

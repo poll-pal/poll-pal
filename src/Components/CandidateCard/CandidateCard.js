@@ -56,7 +56,18 @@ class CandidateCard extends Component {
                         </div>
                         <div className="row">
                             <div className="col-lg-12">
-                                <span><button onClick={this.handleYesVoteClick} type="button" className="btn btn-success">Vote Yes</button></span>&nbsp;&nbsp;<span><button onClick={this.handleNoVoteClick} type="button" className="btn btn-danger">Vote No</button></span>
+                                <span>
+                                    <button
+                                        onClick={this.handleYesVoteClick}
+                                        type="button"
+                                        className="btn btn-success">Vote Yes</button>
+                                </span>&nbsp;&nbsp;
+                                <span>
+                                    <button
+                                        onClick={this.handleNoVoteClick}
+                                        type="button"
+                                        className="btn btn-danger">Vote No</button>
+                                </span>
                             </div>
                         </div>
                     </div>

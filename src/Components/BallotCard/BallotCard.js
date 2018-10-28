@@ -40,9 +40,21 @@ const BallotCard = props => (
             </div>
         </div>
         <div className="row">
-            {props.ballots.map((ballot, index) => (
-                <InitiativeCard ballot={ballot} key={index} user={props.user} updateUser={props.updateUser} />
-            ))}
+            {props.ballots.map((ballot, index) => {
+                //Look up this ballot on the user by id
+                //so you can pass in current vote value
+                const ballotInitiative = props.user.ballotInitiatives.find(bi => bi.id === ballot.id);
+                const choice = ballotInitiative ? ballotInitiative.choice : null;
+                return (
+                    <InitiativeCard
+                        ballot={ballot}
+                        key={index}
+                        user={props.user}
+                        updateUser={props.updateUser}
+                        choice={choice} />
+                );
+            }
+            )}
         </div>
 
 
