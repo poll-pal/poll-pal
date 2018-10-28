@@ -4,6 +4,7 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 const BallotInitiativeSchema = new Schema({
+    id: Number,
     name: String,
     topic: String,
     description: String,

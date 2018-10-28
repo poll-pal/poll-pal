@@ -33,12 +33,11 @@ class App extends Component {
       content = (<Switch>
         <Route exact path="/" render={() => {
           return (
-            <MainPage />
+            <MainPage user={this.state.user} updateUser={this.updateUser} />
           )
         }} />
         <Route exact path="/user" render={(props) => <UserProfile {...props} user={this.state.user} />} />
         <Route exact path="/user/edit" render={(props) => <UserProfileForm {...props} user={this.state.user} updateUser={this.updateUser} />} />
-        <Route exact path="/yourballot" component={BallotCard} />
         <Route exact path="/survey" component={UserSurvey} />
         <Route exact path="/about" component={About} />
       </Switch>);

@@ -28,16 +28,19 @@ class ZipCodeSearch extends Component {
         if (errorMsg) {
             this.setState({ error: errorMsg })
         } else {
-            this.setState({ loading: true })
-            let candidate = null;
-            axios.get('http://localhost:3000/api/candidates/search?zip=' + this.state.zipCode).then(res => {
-                candidate = res.data;
-                let ballot = null;
-                axios.get('http://localhost:3000/api/ballotMeasures/?zip=' + this.state.zipCode).then(res => {
-                    ballot = res.data;
-                    this.setState({ error: null, apiCandidate: candidate, apiBallot: ballot, loading: false });
-                });
-            });
+            this.props.search(this.state.zipCode);
+            // this.setState({ loading: true })
+            // let candidate = null;
+            // axios.get('http://localhost:3000/api/candidates/search?zip=' + this.state.zipCode).then(res => {
+            //     candidate = res.data;
+            //     let ballot = null;
+            //     axios.get('http://localhost:3000/api/ballotMeasures/?zip=' + this.state.zipCode).then(res => {
+            //         ballot = res.data;
+            //         this.setState({ error: null, apiCandidate: candidate, apiBallot: ballot, loading: false });
+            //         console.log(ballot);
+            //         console.log(candidate);
+            //     });
+            // });
 
         }
     }
@@ -51,12 +54,11 @@ class ZipCodeSearch extends Component {
 
 
     render() {
-        console.log(this.state);
         return (
             <div>
                 <form className="zipForm" onSubmit={this.handleSubmit} >
                     < div className="row justify-content-center" >
-                        <div className="col-md-6 searchContainer">
+                        <div className="col-md-3 searchContainer">
                             <input
                                 className="form-control"
                                 id="zipSearch"
@@ -68,14 +70,6 @@ class ZipCodeSearch extends Component {
                         </div>
                     </div>
                 </form>
-
-                <div>{this.state.loading ? <p className="spinner">Loading Please Wait</p> : <p></p>}</div>
-
-                <div className="row">
-                    {this.state.apiBallot.length || this.state.apiCandidate.length ?
-                        <BallotCard ballots={this.state.apiBallot} candidates={this.state.apiCandidate} /> : <p></p>}
-                </div>
-
             </div>
         )
     }
