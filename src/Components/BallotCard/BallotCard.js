@@ -31,7 +31,11 @@ const BallotCard = props => (
         </div>
         <div className="row resultsList">
             {props.candidates.map((candidate, index) => (
-                <CandidateCard candidate={candidate} key={index} user={props.user} updateUser={props.updateUser} />
+                <CandidateCard
+                    candidate={candidate}
+                    key={index}
+                    user={props.user}
+                    updateUser={props.updateUser} />
             ))}
         </div>
         <div className="row initiaveRow">
