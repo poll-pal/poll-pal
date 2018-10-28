@@ -34,6 +34,11 @@ class InitiativeCard extends Component {
     }
 
     render() {
+        let choice = null;
+        if (this.props.user) {
+            const ballotInitiative = this.props.user.ballotInitiatives.find(bi => bi.id === this.props.ballot.id);
+            choice = ballotInitiative ? ballotInitiative.choice : null;
+        }
         return (
             <div>
                 <div className="col-lg-4 col-sm-12">
@@ -41,7 +46,7 @@ class InitiativeCard extends Component {
                         <div className="card-body">
                             <h3 className="card-title">{}</h3>
                             <p>{this.props.ballot.name}</p>
-                            <p>{this.props.choice}</p>
+                            <p>{choice}</p>
                         </div>
                         <div className="row">
                             <div className="col-lg-12">
