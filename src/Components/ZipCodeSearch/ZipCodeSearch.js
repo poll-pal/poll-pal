@@ -18,6 +18,9 @@ class ZipCodeSearch extends Component {
         if (!zipCode) {
             return "You Must Enter A Zipcode";
         }
+        if (zipCode.length !== 5) {
+            return "Zipcode must be 5 digits";
+        }
     }
 
     handleSubmit = event => {
@@ -70,6 +73,7 @@ class ZipCodeSearch extends Component {
                         </div>
                     </div>
                 </form>
+                {this.state.error ? <p className="validationAlert">{this.state.error}</p> : <p></p>}
             </div>
         )
     }
