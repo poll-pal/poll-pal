@@ -29,3 +29,9 @@ overflow: hidden;
   padding-right: 0px;
   padding-left: 0px;
 }
+
+.loadingFont {
+  font-family: 'Pragati Narrow', sans-serif;
+  font-size: 24px;
+  color: white;
+}

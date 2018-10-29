@@ -27,7 +27,7 @@ class App extends Component {
 
   render() {
 
-    let content = <div>Loading...</div>
+    let content = <div className="loadingFont">Loading...</div>
 
     if (!this.state.loading) {
       content = (<Switch>
