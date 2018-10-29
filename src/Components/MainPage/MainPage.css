@@ -16,6 +16,11 @@ body{
 
 }
 
+
+.spinner{
+  text-align: center !important;
+}
+
 #greeting{
   margin-top:80px;
 }

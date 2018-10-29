@@ -2,35 +2,66 @@ import React, { Component } from 'react'
 import "./InitiativeCard.css";
 
 class InitiativeCard extends Component {
+
     handleYesVoteClick = (event) => {
-        console.log("you clicked yes on a initiative")
-        const ballotInitiative = {
-            id: this.props.ballot.id,
-            name: this.props.ballot.name,
-            choice: 'yes'
-        };
-        //add Ballot Initiative to user
-        //TODO: Make sure user.ballotInitiatives is empty array
-        //TODO: Check if initiative is already saved on user
+        this.updateVote('yes');
+    }
+
+    handleNoVoteClick = (event) => {
+        this.updateVote('no');
+    }
+
+    updateVote = (choice) => {
         let user = this.props.user;
-        user.ballotInitiatives.push(ballotInitiative);
-        //update user
+        let ballotInitiative = this.findUserBallotInitiative();
+        if (ballotInitiative) {
+            ballotInitiative.choice = choice;
+        } else {
+            ballotInitiative = {
+                id: this.props.ballot.id,
+                name: this.props.ballot.name,
+                choice: choice
+            };
+            user.ballotInitiatives.push(ballotInitiative);
+        }
         this.props.updateUser(user);
     }
-    handleNoVoteClick = (event) => {
-        console.log("you clicked no on a initiative")
-        const ballotInitiative = {
-            id: this.props.ballot.id,
-            name: this.props.ballot.name,
-            choice: 'no'
-        };
-        //add Ballot Initiative to user
-        //TODO: Make sure user.ballotInitiatives is empty array
-        //TODO: Check if initiative is already saved on user
-        let user = this.props.user;
-        user.ballotInitiatives.push(ballotInitiative);
-        //update user
-        this.props.updateUser(user);
+
+    findUserBallotInitiative = () => {
+        return this.props.user.ballotInitiatives.find(bi => bi.id === this.props.ballot.id);
+    }
+
+    renderVotingContent = () => {
+        let content = (
+            <div className="row">
+                <div className="col">
+                    <p> Log in to save your vote</p>
+                </div>
+            </div>
+        );
+        if (this.props.user) {
+            let choice = null;
+            const ballotInitiative = this.findUserBallotInitiative();
+            if (ballotInitiative) {
+                choice = 'You Voted ' + ballotInitiative.choice;
+            }
+
+            content = (
+                <div>
+                    <div className="row">
+                        <div className="col-lg-12">
+                            <p>{choice}</p>
+                        </div>
+                    </div>
+                    <div className="row">
+                        <div className="col-lg-12">
+                            <span><button onClick={this.handleYesVoteClick} type="submit" className="btn btn-yes">Vote Yes</button></span>&nbsp;&nbsp;<span><button onClick={this.handleNoVoteClick} type="submit" className="btn btn-no">Vote No</button></span>
+                        </div>
+                    </div>
+                </div>
+            );
+        }
+        return content;
     }
 
     render() {
@@ -41,13 +72,8 @@ class InitiativeCard extends Component {
                         <div className="card-body">
                             <h3 className="card-title">{}</h3>
                             <p>{this.props.ballot.name}</p>
-                            <p>{this.props.choice}</p>
                         </div>
-                        <div className="row">
-                            <div className="col-lg-12">
-                                <span><button onClick={this.handleYesVoteClick} type="submit" className="btn btn-yes">Vote Yes</button></span>&nbsp;&nbsp;<span><button onClick={this.handleNoVoteClick} type="submit" className="btn btn-no">Vote No</button></span>
-                            </div>
-                        </div>
+                        {this.renderVotingContent()}
                     </div>
                 </div>
             </div>
