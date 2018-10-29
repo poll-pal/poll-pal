@@ -25,3 +25,9 @@
 .validationAlert{
     text-align: center;
 }
+
+
+.currentAddressBtn{
+    margin-top: 10px;
+    color: #FFB106;
+}
