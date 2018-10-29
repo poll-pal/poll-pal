@@ -15,48 +15,58 @@ const getMeasuresByState = (state, callback = null) => {
     axios.get(uri)
         .then(response => {
             let validMeasures = [];
-            response.data.data.forEach(measure =>{
-                if(measure.status == 'On the ballot'){
-                    validMeasures.push(measure);
+            response.data.data.forEach(measure => {
+                if (measure.status == 'On the ballot') {
+                    const ballotModel = mapToBallotModel(measure);
+                    validMeasures.push(ballotModel);
                 }
             });
-            if(callback){
+            if (callback) {
                 callback.json(validMeasures);
             }
-            else{
+            else {
                 console.log(response.data);
             }
-    })
+        })
         .catch(err => console.log(err.message));
 };
 
+const mapToBallotModel = measure => {
+    return {
+        ...measure,
+        yesVote: measure.yes_vote,
+        noVote: measure.no_vote
+    };;
+}
+
 const getMeasuresByAddress = (address, callback = null) => {
-    axios.get(MQ_API+address).then(geoResponse => {
+    axios.get(MQ_API + address).then(geoResponse => {
         let locationObj = geoResponse.data.results[0].locations[0];
         console.log(locationObj);
-        axios.get(BP_URL+locationObj.adminArea3)
-        .then(response => { 
-            let validMeasures = [];
-            response.data.data.forEach(measure =>{
-                if(measure.status == 'On the ballot'){
-                    validMeasures.push(measure);
+        axios.get(BP_URL + locationObj.adminArea3)
+            .then(response => {
+                let validMeasures = [];
+                response.data.data.forEach(measure => {
+                    if (measure.status == 'On the ballot') {
+                        const ballotModel = mapToBallotModel(measure);
+                        validMeasures.push(ballotModel);
+                    }
+                });
+                if (callback) {
+                    callback.json(validMeasures);
                 }
-            });
-            if(callback){
-                callback.json(validMeasures);
-            }
-            else{
-                console.log(response.data);
-            }
-        })  
-        .catch(err => console.log(err.message));
-        } // End BallotPedia API Call
+                else {
+                    console.log(response.data);
+                }
+            })
+            .catch(err => console.log(err.message));
+    } // End BallotPedia API Call
     ).catch(err => console.error(err.message));
 };
 
 
 
 module.exports = {
-    getMeasuresByState:getMeasuresByState,
+    getMeasuresByState: getMeasuresByState,
     getMeasuresByAddress: getMeasuresByAddress
 }

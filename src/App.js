@@ -9,6 +9,7 @@ import BallotCard from './Components/BallotCard';
 import UserSurvey from './Components/UserSurvey';
 import MainPage from './Components/MainPage';
 import About from './Components/About';
+import MyBallot from './Components/MyBallot';
 
 class App extends Component {
   state = { user: null, loading: true };
@@ -40,6 +41,7 @@ class App extends Component {
         <Route exact path="/user/edit" render={(props) => <UserProfileForm {...props} user={this.state.user} updateUser={this.updateUser} />} />
         <Route exact path="/survey" component={UserSurvey} />
         <Route exact path="/about" component={About} />
+        <Route exact path="/myBallot" component={(props) => <MyBallot {...props} user={this.state.user} updateUser={this.updateUser} />} />
       </Switch>);
     }
     return (

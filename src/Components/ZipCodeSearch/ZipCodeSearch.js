@@ -13,6 +13,11 @@ class ZipCodeSearch extends Component {
         laoding: false
     };
 
+
+    handleUseAddressButton = () => {
+
+    }
+
     validateZip = () => {
         const { zipCode } = this.state
         if (!zipCode) {
@@ -31,7 +36,7 @@ class ZipCodeSearch extends Component {
         } else {
             this.props.search(this.state.zipCode);
 
-
+            //add ....if user..... zipCode === user address? get zip out of it?
         }
     }
 
@@ -47,23 +52,28 @@ class ZipCodeSearch extends Component {
         return (
             <div>
                 <div className="row">
-                        <div className="col-md-6 offset-md-3 text-center searchContainer">
-                            <form className="zipForm" onSubmit={this.handleSubmit} >
-                                <div className="form-group">
-                                    <input
-                                        className="form-control"
-                                        id="zipSearch"
-                                        type="text"
-                                        placeholder="Enter Your Zip Code"
-                                        value={this.state.zipCode}
-                                        onChange={this.handleInputChange}
-                                    />
-                                </div>
-                            </form>
-                        </div>
+                    <div className="col-md-6 offset-md-3 text-center searchContainer">
+                        <form className="zipForm" onSubmit={this.handleSubmit} >
+                            <div className="form-group">
+                                <input
+                                    className="form-control"
+                                    id="zipSearch"
+                                    type="text"
+                                    placeholder="Enter Your Zip Code"
+                                    value={this.state.zipCode}
+                                    onChange={this.handleInputChange}
+                                />
+                                {this.props.user ?
+                                    <button
+                                        onClick={this.handleUseAddressButton}
+                                        type="button"
+                                        className="currentAddressBtn btn" >Use Saved Address</button> : null}
+                            </div>
+                        </form>
+                        {this.state.error ? <p className="validationAlert">{this.state.error}</p> : <p></p>}
+                    </div>
                 </div>
 
-                {this.state.error ? <p className="validationAlert">{this.state.error}</p> : <p></p>}
             </div>
         )
     }
@@ -73,10 +83,3 @@ class ZipCodeSearch extends Component {
 
 export default ZipCodeSearch;
 
-
-                // Schuyler [7:18 PM]
-                // http://localhost:3000/api/candidates/?race=Colorado+House+of+Representatives+District+41
-
-
-                // Schuyler [8:34 PM]
-                // Here's the ballot measures endpoint http://localhost:3000/api/ballotMeasures/?zip=80004

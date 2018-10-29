@@ -17,10 +17,10 @@ class MainPage extends Component {
     onZipcodeSearch = (zipcode) => {
         this.setState({ loading: true })
         let candidate = null;
-        axios.get('http://localhost:3000/api/candidates/search?zip=' + zipcode).then(res => {
+        axios.get('/api/candidates/search?zip=' + zipcode).then(res => {
             candidate = res.data;
             let ballot = null;
-            axios.get('http://localhost:3000/api/ballotMeasures/?zip=' + zipcode).then(res => {
+            axios.get('/api/ballotMeasures/?zip=' + zipcode).then(res => {
                 ballot = res.data;
                 this.setState({ error: null, apiCandidate: candidate, apiBallot: ballot, loading: false });
                 console.log(ballot);
