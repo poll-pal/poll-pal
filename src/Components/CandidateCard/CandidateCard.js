@@ -4,42 +4,79 @@ import "./CandidateCard.css";
 class CandidateCard extends Component {
 
     handleYesVoteClick = (event) => {
-        console.log("you clicked yes on a candidate")
-        const candidate = {
-            id: this.props.candidate.id,
-            name: this.props.candidate.name,
-
-            choice: 'yes'
-        };
-        //add candidate Initiative to user
-        //TODO: Make sure user.candidates is empty array
-        //TODO: Check if initiative is already saved on user
-        let user = this.props.user;
-        user.candidates.push(candidate);
-        //update user
-        this.props.updateUser(user);
+        this.updateVote('yes');
+        console.log('you clicked yes on a candidate')
     }
 
     handleNoVoteClick = (event) => {
-        console.log("you clicked no on a candidate")
+        console.log('you clicked no on a candidate')
+        this.updateVote('no');
+    }
 
-        const candidate = {
-            id: this.props.candidate.id,
-            name: this.props.candidate.name,
-            choice: 'no'
-        };
-        //add candidate Initiative to user
-        //TODO: Check if initiative is already saved on user
+    updateVote = (choice) => {
         let user = this.props.user;
-        user.candidates.push(candidate);
-        //update user
+        let candidate = this.findUserCandidate();
+        if (candidate) {
+            candidate.choice = choice
+        } else {
+            candidate = {
+                id: this.props.candidate.id,
+                name: this.props.candidate.person_name,
+                choice: choice
+            };
+            user.candidates.push(candidate);
+        }
         this.props.updateUser(user);
+        console.log('candidate choice ' + candidate.choice)
+    }
+
+    findUserCandidate = () => {
+        return this.props.user.candidates.find(candidate => candidate.id === this.props.candidate.id);
+    }
+
+
+
+
+
+    renderVotingContent = () => {
+        let content = (
+            <div className="row">
+                <div className="col">
+                    <p> Log in to save your vote</p>
+                </div>
+            </div>
+        );
+
+        if (this.props.user) {
+            let choice = null;
+            const candidate = this.findUserCandidate();
+            console.log('Here is the candidate' + candidate)
+            if (candidate) {
+                choice = 'You Voted ' + candidate.choice;
+            }
+
+            content = (
+                <div>
+                    <div className="row">
+                        <div className="col-lg-12">
+                            <p>{choice}</p>
+                        </div>
+                    </div>
+                    <div className="row">
+                        <div className="col-lg-12">
+                            <span><button onClick={this.handleYesVoteClick} type="submit" className="btn btn-yes">Vote Yes</button></span>&nbsp;&nbsp;<span><button onClick={this.handleNoVoteClick} type="submit" className="btn btn-no">Vote No</button></span>
+                        </div>
+                    </div>
+                </div>
+            );
+        }
+        return content;
     }
 
     render() {
         return (
             <div className="mainBallotCard">
-                <div className="col-lg-12 col-xs-12">
+                <div className="col-lg-4 col-sm-12">
                     <div className="card">
                         <div className="card-body">
                             <h3 className="card-title">{this.props.candidate.person_name}</h3>
@@ -50,8 +87,7 @@ class CandidateCard extends Component {
                                 <span><a href="{this.props.candidate.campaign_website_url}" target="_blank">website</a></span> |
                         <span><a href="{this.props.candidate.campaign_twitter}" target="_blank"><i className="fab fa-twitter fa-sm"></i></a></span>
                             </p>
-                            <br />
-                            <span><button type="button" className="btn btn-yes" onClick={this.handleYesVoteClick}>Vote Yes</button></span>&nbsp;&nbsp;<span><button type="button" className="btn btn-no" onClick={this.handleNoVoteClick}>Vote No</button></span>
+                            {this.renderVotingContent()}
                         </div>
                     </div>
                 </div>

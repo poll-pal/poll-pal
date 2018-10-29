@@ -2,21 +2,18 @@ import React, { Component } from 'react'
 import "./InitiativeCard.css";
 
 class InitiativeCard extends Component {
+
     handleYesVoteClick = (event) => {
-        console.log("you clicked yes on a initiative")
         this.updateVote('yes');
     }
 
     handleNoVoteClick = (event) => {
-        console.log("you clicked no on a initiative")
         this.updateVote('no');
     }
 
     updateVote = (choice) => {
         let user = this.props.user;
-        //Find existing ballot initiative
         let ballotInitiative = this.findUserBallotInitiative();
-        //if not found create new one
         if (ballotInitiative) {
             ballotInitiative.choice = choice;
         } else {
@@ -27,7 +24,6 @@ class InitiativeCard extends Component {
             };
             user.ballotInitiatives.push(ballotInitiative);
         }
-        //update user
         this.props.updateUser(user);
     }
 
@@ -39,13 +35,12 @@ class InitiativeCard extends Component {
         let content = (
             <div className="row">
                 <div className="col">
-                    Log in to cast your vote.
+                    <p> Log in to save your vote</p>
                 </div>
             </div>
         );
         if (this.props.user) {
             let choice = null;
-
             const ballotInitiative = this.findUserBallotInitiative();
             if (ballotInitiative) {
                 choice = 'You Voted ' + ballotInitiative.choice;
@@ -70,7 +65,6 @@ class InitiativeCard extends Component {
     }
 
     render() {
-
         return (
             <div>
                 <div className="col-lg-4 col-sm-12">
