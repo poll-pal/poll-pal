@@ -8,11 +8,11 @@
 }
 
 #zipSearch{
+    position: relative;
     text-align: center;
-    font-size: 30px;
-    text-shadow:1px 1px 3px rgba(200,200,200,0.6);
+    font-size: 3vw;
+    text-shadow: 2px 2px 3px rgba(100,100,100,0.6);
     color: white !important;
-    width: 300px;
 }
 
 #zipSearch:focus{
@@ -21,4 +21,9 @@
 
 .validationAlert{
     text-align: center;
+}
+
+input{
+    padding-top: 20px !important;
+    padding-bottom: 20px !important;
 }

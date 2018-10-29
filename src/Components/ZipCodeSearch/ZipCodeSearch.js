@@ -46,20 +46,23 @@ class ZipCodeSearch extends Component {
     render() {
         return (
             <div>
-                <form className="zipForm" onSubmit={this.handleSubmit} >
-                    < div className="row justify-content-center" >
-                        <div className="col-md-3 searchContainer">
-                            <input
-                                className="form-control"
-                                id="zipSearch"
-                                type="text"
-                                placeholder="Enter Your Zip Code"
-                                value={this.state.zipCode}
-                                onChange={this.handleInputChange}
-                            />
+                <div className="row">
+                        <div className="col-md-6 offset-md-3 text-center searchContainer">
+                            <form className="zipForm" onSubmit={this.handleSubmit} >
+                                <div className="form-group">
+                                    <input
+                                        className="form-control"
+                                        id="zipSearch"
+                                        type="text"
+                                        placeholder="Enter Your Zip Code"
+                                        value={this.state.zipCode}
+                                        onChange={this.handleInputChange}
+                                    />
+                                </div>
+                            </form>
                         </div>
-                    </div>
-                </form>
+                </div>
+
                 {this.state.error ? <p className="validationAlert">{this.state.error}</p> : <p></p>}
             </div>
         )

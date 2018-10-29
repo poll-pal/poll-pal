@@ -24,9 +24,11 @@ body{
 #greeting{
   margin-top:80px;
 }
-
+/*
+Not used - Deprecated by bootstrap classes
+*/
 .logo{
-  max-width: 600px;
+ 
 }
 
 #second {
