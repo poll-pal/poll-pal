@@ -44,7 +44,9 @@ class MainPage extends Component {
                 </div>
                 {/* <Countdown /> */}
                 <ZipCodeSearch user={this.props.user} updateUser={this.props.updateUser} search={this.onZipcodeSearch} />
-                <div>{this.state.loading ? <p className="spinner fas fa-spinner">Loading Please Wait</p> : <p></p>}</div>
+                <div className="spinner">{this.state.loading ?
+                    <p><i className="fa fa-spinner fa-spin fa-3x fa-fw"></i><span class="sr-only">Loading...</span></p> : <p></p>}</div>
+
             </div>
         );
         if (this.state.apiBallot.length || this.state.apiCandidate.length) {

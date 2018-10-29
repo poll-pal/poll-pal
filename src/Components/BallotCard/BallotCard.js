@@ -31,9 +31,14 @@ const BallotCard = props => (
         </div>
         <div className="row resultsList">
             {props.candidates.map((candidate, index) => (
-                <CandidateCard candidate={candidate} key={index} user={props.user} updateUser={props.updateUser} />
+                <CandidateCard
+                    candidate={candidate}
+                    key={index}
+                    user={props.user}
+                    updateUser={props.updateUser} />
             ))}
         </div>
+
         <div className="row initiaveRow">
             <div className="col-lg-12 col-xs-12 InitiativeResults">
                 <h2>Initiatives in Your District</h2>
@@ -41,8 +46,6 @@ const BallotCard = props => (
         </div>
         <div className="row resultsList">
             {props.ballots.map((ballot, index) => {
-                //Look up this ballot on the user by id
-                //so you can pass in current vote value
                 return (
                     <InitiativeCard
                         ballot={ballot}
