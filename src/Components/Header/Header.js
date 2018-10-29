@@ -41,9 +41,9 @@ class Header extends Component {
             // Displays content if user is not logged in.
             <nav className="navbar" key="7">
                 <div className="d-flex w-100 order-0">
-                    <Link to="/" className="navbar-brand mr-1">
+                    <a href="/" className="navbar-brand mr-1">
                         <span className="navBrand">Poll Pal</span>
-                    </Link>
+                    </a>
                     <button className="navbar-toggler collapsed" onClick={this.menuHandler}
                         type="button" data-toggle="collapse"
                         data-target="#collapsingNavbar" aria-controls="collapsingNavbar"

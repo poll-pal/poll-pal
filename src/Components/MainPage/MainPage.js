@@ -30,6 +30,13 @@ class MainPage extends Component {
 
     }
 
+    clearResults = () => {
+        this.setState({
+            apiBallot: [],
+            apiCandidate: []
+        });
+    }
+
     render() {
         let content = (
             <div className="container" id="greeting">
@@ -51,6 +58,7 @@ class MainPage extends Component {
         if (this.state.apiBallot.length || this.state.apiCandidate.length) {
             content = (
                 <div className="row">
+                    <button type="button" className="btn" onClick={this.clearResults}>Searh Again</button>
                     <BallotCard
                         user={this.props.user}
                         ballots={this.state.apiBallot}
