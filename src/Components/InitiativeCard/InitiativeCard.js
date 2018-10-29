@@ -77,7 +77,6 @@ class InitiativeCard extends Component {
                     </div>
                 </div>
             </div>
-
         );
     }
 }

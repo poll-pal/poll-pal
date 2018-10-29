@@ -45,7 +45,7 @@ class MainPage extends Component {
                 {/* <Countdown /> */}
                 <ZipCodeSearch user={this.props.user} updateUser={this.props.updateUser} search={this.onZipcodeSearch} />
                 <div className="spinner">{this.state.loading ?
-                    <p><i className="fa fa-spinner fa-spin fa-3x fa-fw"></i><span class="sr-only">Loading...</span></p> : <p></p>}</div>
+                    <p className="spinnerFont"><i className="fa fa-spinner fa-spin fa-3x fa-fw"></i><span class="sr-only">&nbsp;&nbsp;Loading...</span></p> : <p></p>}</div>
 
             </div>
         );
