@@ -8,35 +8,49 @@ const districts = require('./district');
 const geocoder = require('./geocode');
 const districtsArray = [];
 var candidatesArray = [];
-var sentReply = true; 
+var sentReply = true;
 
 /* 
  * @function getCandidates - this will return candidates using the 'race_election_district_name' attribute returned in the 'district' API calls
  * @param race [String] - the race your would like candiates to be from
  * ie - 'Colorado District 7'  or for the state-wide races use the full name of the state 'Colorado'
  */
-const getCandidate = () =>{
+const getCandidate = () => {
 
 };
 
+const toCandidateModel = apiData => {
+    return {
+        ...apiData,
+        name: apiData.person_name,
+        office: apiData.race_office_name,
+        party: apiData.party_affiliation.data.name,
+        state: apiData.race_office_district_state,
+        incumbent: apiData.is_incumbent,
+        website: apiData.campaign_website_url,
+        twitter: apiData.campaign_twitter
+    };
+}
+
 const getCandidates = (racesArray, callback = null) => {
     let race = racesArray.pop();
-    if(race.name === undefined){
+    if (race.name === undefined) {
         return;
     }
     let uri = BP_URL + race.name + "&filters[race_office_district_state][eq]=" + race.state;
     console.log(uri);
     axios.get(uri)
         .then(response => {
-            if(response.data.data.length > 0){
+            if (response.data.data.length > 0) {
                 candidatesArray.push(response.data.data);
                 candidatesArray = [].concat.apply([], candidatesArray);
             }
-            if(racesArray.length === 0 && !sentReply){
+            if (racesArray.length === 0 && !sentReply) {
                 sentReply = true;
                 // We're done
-                setTimeout(()=>{
-                    callback.status(200).json(candidatesArray);
+                setTimeout(() => {
+                    const candidateModels = candidatesArray.map(toCandidateModel)
+                    callback.status(200).json(candidateModels);
                     return;
                 }, 3000);
             }
@@ -75,7 +89,7 @@ const districtList = (response, expRes) => {
 
 
 module.exports = {
-    getCandidate:getCandidate,
-    getCandidates:getCandidates,
+    getCandidate: getCandidate,
+    getCandidates: getCandidates,
     getCandidatesByZip: getCandidatesByZip
 }

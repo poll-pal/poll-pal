@@ -18,8 +18,7 @@ class InitiativeCard extends Component {
             ballotInitiative.choice = choice;
         } else {
             ballotInitiative = {
-                id: this.props.ballot.id,
-                name: this.props.ballot.name,
+                ...this.props.ballot,
                 choice: choice
             };
             user.ballotInitiatives.push(ballotInitiative);
