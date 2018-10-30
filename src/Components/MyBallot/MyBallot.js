@@ -1,20 +1,20 @@
-import React, { Component } from 'react'
+import React from 'react'
 import "./MyBallot.css";
 import BallotCard from '../BallotCard'
 
-class MyBallot extends Component {
-
-    render() {
-        return (
-            <div>
-                <BallotCard
-                    user={this.props.user}
-                    ballots={this.props.user.ballotInitiatives}
-                    candidates={this.props.user.candidates}
-                    updateUser={this.props.updateUser} />
-            </div>
-        );
-    }
+const MyBallot = (props) => {
+    return (
+        <div>
+            <BallotCard
+                user={props.user}
+                ballots={props.user.ballotInitiatives}
+                candidates={props.user.candidates}
+                updateUser={props.updateUser}
+                candidatesTitle="Your Candidates"
+                ballotsTitle="Your Ballot Measures"
+            />
+        </div>
+    );
 }
 
 export default MyBallot;
