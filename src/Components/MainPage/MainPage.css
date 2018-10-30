@@ -17,6 +17,10 @@ body{
 }
 
 
+.responsive {
+  width: 100%;
+  height: auto;
+}
 .spinner{
   text-align: center !important;
 }
