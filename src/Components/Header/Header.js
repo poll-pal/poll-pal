@@ -1,28 +1,26 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import "./Header.css";
 
 class Header extends Component {
-  constructor(props) {
-    super(props);
-    this.state = { isOpen: true };
-  }
-
-  menuHandler= () => {
-    this.setState({
-        isOpen: !this.state.isOpen
-    });
-    console.log(this.state);
-  }
-
-  addBackground = () =>{
-    if(this.state.isOpen){
-        return <div style="background-color:purple; position:absolute; top:0px; right:0px; height: 500px; width: 30vw;"></div>;
-    }  
-    else{
-        return <div></div>;
+    constructor(props) {
+        super(props);
+        this.state = { isOpen: true };
     }
-  }
+    menuHandler = () => {
+        this.setState({
+            isOpen: !this.state.isOpen
+        });
+        console.log(this.state);
+    }
+    addBackground = () =>{
+        if(this.state.isOpen){
+            return <div style="background-color:purple; position:absolute; top:0px; right:0px; height: 500px; width: 30vw;"></div>;
+        }  
+        else{
+            return <div></div>;
+        }
+    }
 
   render() {
     let content;
@@ -83,9 +81,6 @@ class Header extends Component {
         </nav>
     );
   }
-
-
-  
 }
 
 export default Header;

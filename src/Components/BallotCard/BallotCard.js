@@ -14,12 +14,12 @@ const BallotCard = props => (
                 <h1 className="ballotHeader">Your District Ballot</h1>
                 <br />
                 <p className="ballotWelcome">
-                    <b>Please note this is not a real ballot (obviously).</b><br/>
+                    <b>Please note this is not a real ballot (obviously).</b><br />
                     Be part of the change in your community by casting your vote! Discover who's running in your district and
                     find out what candidates you might identify with best, then visit their website and social media platforms to
                     learn even more about what they stand for. Keep scrolling for state and county ballot initiatives so you're ready
                     to fill out that ballot in style! Because voting is cool.*
-                    <br/>
+                    <br />
                     <em>*Some reading required.</em>
                 </p>
             </div>
@@ -31,18 +31,30 @@ const BallotCard = props => (
         </div>
         <div className="row resultsList">
             {props.candidates.map((candidate, index) => (
-                <CandidateCard candidate={candidate} key={index} />
+                <CandidateCard
+                    candidate={candidate}
+                    key={index}
+                    user={props.user}
+                    updateUser={props.updateUser} />
             ))}
         </div>
+
         <div className="row initiaveRow">
             <div className="col-lg-12 col-xs-12 InitiativeResults">
                 <h2>Initiatives in Your District</h2>
             </div>
         </div>
         <div className="row resultsList">
-            {props.ballots.map((ballot, index) => (
-                <InitiativeCard ballot={ballot} key={index} />
-            ))}
+            {props.ballots.map((ballot, index) => {
+                return (
+                    <InitiativeCard
+                        ballot={ballot}
+                        key={index}
+                        user={props.user}
+                        updateUser={props.updateUser} />
+                );
+            }
+            )}
         </div>
         <Footer />
     </div>

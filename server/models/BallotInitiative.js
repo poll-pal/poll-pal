@@ -4,9 +4,12 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 const BallotInitiativeSchema = new Schema({
+    id: Number,
     name: String,
+    yesVote: String,
+    noVote: String,
     topic: String,
-    description: String,
+    summary: String,
     choice: String,
     type: String,
     url: String
