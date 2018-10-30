@@ -6,6 +6,8 @@ const Schema = mongoose.Schema;
 const BallotInitiativeSchema = new Schema({
     id: Number,
     name: String,
+    official_title: String,
+    text: String,
     yesVote: String,
     noVote: String,
     topic: String,
