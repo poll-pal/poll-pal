@@ -7,12 +7,19 @@ class Header extends Component {
         super(props);
         this.state = { isOpen: true };
     }
-
     menuHandler = () => {
         this.setState({
             isOpen: !this.state.isOpen
         });
         console.log(this.state);
+    }
+    addBackground = () => {
+        if (this.state.isOpen) {
+            return <div style="background-color:purple; position:absolute; top:0px; right:0px; height: 500px; width: 30vw;"></div>;
+        }
+        else {
+            return <div></div>;
+        }
     }
 
     render() {
@@ -21,12 +28,11 @@ class Header extends Component {
         if (this.props.user) {
             content =
                 <div className="profile nav-item text-center">
-                    <Link to="/myballot" className="nav-link">My Ballot</Link>
                     <Link to="/user" className="nav-link" key="1">
-                        <span className="userName">{this.props.user.givenName}</span><br />
+                        <span className="namePlate">{this.props.user.givenName}</span><br />
                         <img
                             className="profilePic"
-                            style={{ borderRadius: '50%', marginTop: '10%' }}
+                            style={{ borderRadius: '50%' }}
                             src={this.props.user.imageURL}
                             alt="User profile"
                         />
@@ -54,8 +60,8 @@ class Header extends Component {
                         <span className="sr-only">Toggle navigation</span>
                     </button>
                     {/* <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsingNavbar">
-                    <i className="fas fa-bars"></i>
-                </button> */}
+                <i className="fas fa-bars"></i>
+            </button> */}
                 </div>
                 <div className="navbar-collapse collapse justify-content-between align-items-center w-50" id="collapsingNavbar">
                     <ul className="navbar-nav mx-auto text-center">
@@ -75,9 +81,6 @@ class Header extends Component {
             </nav>
         );
     }
-
-
-
 }
 
 export default Header;
