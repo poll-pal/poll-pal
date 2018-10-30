@@ -1,6 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "./UserSurvey.css";
+import RegisterToVote from "../RegisterToVote";
+import PoliticalQuiz from "../PoliticalQuiz";
 
 
 
@@ -14,9 +16,10 @@ class UserSurvey extends React.Component {
 
   render() {
     return (
-      <div className="container">
+    <div>
+      <div className="container involved">
         <div className="row">
-          <div className="col-lg-12 col-xs-12">
+          <div className="col-lg-12 col-xs-12 ">
             <h1 id="surveyTitle">Get Involved</h1>
             <p id="surveyIntro">
               Make your voice heard this election season. Get started by registering to vote or learn more about where you stand
@@ -25,22 +28,30 @@ class UserSurvey extends React.Component {
             </p>
           </div>
         </div>
-        <div className="row">
-          <div className="col-lg-12 col-xs-12">
-            <div id="surveyContainer">
-              <iframe src="http://www.people-press.org/quiz/political-typology/" frameborder="0"></iframe>
+    
+    <div className="row text-center" id="userSurvey">
+        <div className="col-lg-6">
+          < RegisterToVote />
+        </div>
+          <div className="col-lg-6">
+            
+              < PoliticalQuiz />
             </div>
           </div>
         </div>
       </div>
+ 
 
-    );
+      );
+
   }
 
   componentDidMount() {
 
   }
 }
+
+
 
 export default UserSurvey;
 

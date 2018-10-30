@@ -2,22 +2,31 @@
 
 #surveyTitle {
     text-align: center;
+    font-family: 'Patua One', cursive;
+    color: #E5006B;
 }
 
 #surveyIntro {
     text-align: center;
-    margin-right: 300px;
-    margin-left: 300px;
+    font-family: 'Pragati Narrow', sans-serif;
+    font-size: 20px;
+ 
 }
 
-#surveyContainer {
-    margin-top: 5%;
-    margin-right: 100px;
-    margin-left: 100px;
+#userSurvey {
+    padding: 30px;
+}
+
+.involved {
+    background: rgba(255, 255, 255, .8);
+    border-radius: 6px;
+    width: 100%;
+    height: 300px;
+    padding: 20px;
 }
 
 iframe {
-    background-color: rgba(200, 200, 200, 1);
+    background-color: rgb(255, 255, 255);
     width: 100%;
     height: 90vh;
 }

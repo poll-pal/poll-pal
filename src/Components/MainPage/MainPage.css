@@ -21,6 +21,7 @@ body{
   width: 100%;
   height: auto;
 }
+
 .spinner{
   text-align: center !important;
 }
@@ -28,12 +29,7 @@ body{
 #greeting{
   margin-top:80px;
 }
-/*
-Not used - Deprecated by bootstrap classes
-*/
-.logo{
- 
-}
+
 
 #second {
   color: white;
@@ -62,7 +58,7 @@ input[type="text"],
 select.form-control {
   background: transparent;
   border: none;
-  border-bottom: 3px solid #FBA304;
+  border-bottom: 3px solid #FED11E;
   color: white !important;
   -webkit-box-shadow: none;
   box-shadow: none;

@@ -23,12 +23,48 @@
     text-align: center;
 }
 
-.currentAddressBtn{
-    margin-top: 10px;
-    color: #FFB106;
-}
 
 input{
     padding-top: 20px !important;
     padding-bottom: 20px !important;
 }
+
+.currentAddressBtn{
+    background: #FED11E;
+    color:#fff;
+    border:none;
+    position:relative;
+    height:60px;
+    font-size:1.6em;
+    padding:0 2em;
+    cursor:pointer;
+    transition:800ms ease all;
+    outline:none;
+    font-family: 'Pragati Narrow', sans-serif;
+    margin: 10px;
+
+  }
+  .currentAddressBtn:hover{
+    background:#fff;
+    color:#FED11E;
+  }
+  .currentAddressBtn:before,.currentAddressBtn:after{
+    content:'';
+    position:absolute;
+    top:0;
+    right:0;
+    height:2px;
+    width:0;
+    background: #FED11E;
+    transition:400ms ease all;
+  }
+  .currentAddressBtn:after{
+    right:inherit;
+    top:inherit;
+    left:0;
+    bottom:0;
+  }
+  .currentAddressBtn:hover:before,.currentAddressBtn:hover:after{
+    width:100%;
+    transition:800ms ease all;
+  }
