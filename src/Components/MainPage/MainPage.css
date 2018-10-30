@@ -16,17 +16,25 @@ body{
 
 }
 
+
 .responsive {
   width: 100%;
   height: auto;
 }
 
+.spinner{
+  text-align: center !important;
+
+}
+
 #greeting{
   margin-top:80px;
 }
-
+/*
+Not used - Deprecated by bootstrap classes
+*/
 .logo{
-  max-width: 600px;
+ 
 }
 
 #second {
@@ -39,6 +47,17 @@ body{
 
 .formControl {
   border-top: 0px;
+}
+
+.fa-spinner {
+  color: white;
+  font-size: 24px;
+}
+
+.spinnerFont {
+  font-family: 'Pragati Narrow', sans-serif;
+  font-size: 24px;
+  color: white; 
 }
 
 input[type="text"],

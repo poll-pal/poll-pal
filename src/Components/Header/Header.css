@@ -28,6 +28,15 @@
     padding: 5px; 
 }
 
+.navbar-brand{
+    text-shadow: 3px 3px 8px black;
+    font-weight: bold;
+}
+
+.navbar-brand:hover{
+    text-shadow: 3px 3px 5px rgba(0,0,0,0.8);
+    color: aliceblue !important;
+}
 
 .nav-link {
     font-family: 'Pragati Narrow', sans-serif;
@@ -43,36 +52,42 @@
 .navbar-toggler{
     position: absolute;
     top: 25%;
+    margin-top: 10px;
     right: 0%;
     font-size: 3rem;
     color:white;
-  
-    
+    text-shadow: 3px 3px 8px black !important;
+    border: none;
+    background: transparent !important;
+
 }
+
 .logout{
     position: relative;
     font-size: 1.5vw;
     left: 1.7vw;
+    top: -10px;
 }
 .profile{
-    padding-right: 30px !important;
+    padding-right: 15px !important;
 }
 
-.userName{
+.namePlate{
     position: relative;
     left: 1.5vw;
-    font-size: 1.8vw;
 }
 
 .profilePic{
     position: relative;
-    width: 4vw;
+    width: 7vw;
+    left: 1.5vw;
 }
 
 .navbar-toggler {
     border: none;
     background: #E5006B;
   }
+
   
   .navbar-toggler:focus {
     outline: none;

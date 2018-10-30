@@ -1,19 +1,26 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import "./Header.css";
 
 class Header extends Component {
-  constructor(props) {
-    super(props);
-    this.state = { isOpen: true };
-  }
-
-  menuHandler= () => {
-    this.setState({
-        isOpen: !this.state.isOpen
-    });
-    console.log(this.state);
-  }
+    constructor(props) {
+        super(props);
+        this.state = { isOpen: true };
+    }
+    menuHandler = () => {
+        this.setState({
+            isOpen: !this.state.isOpen
+        });
+        console.log(this.state);
+    }
+    addBackground = () =>{
+        if(this.state.isOpen){
+            return <div style="background-color:purple; position:absolute; top:0px; right:0px; height: 500px; width: 30vw;"></div>;
+        }  
+        else{
+            return <div></div>;
+        }
+    }
 
 
   render() {
@@ -23,10 +30,10 @@ class Header extends Component {
         content = 
             <div className="profile nav-item text-center">
                 <Link to="/user" className="nav-link" key="1">
-                    <span className="userName">{this.props.user.givenName}</span><br/>
+                    <span className="namePlate">{this.props.user.givenName}</span><br/>
                     <img
                         className="profilePic"
-                        style={{ borderRadius: '50%', marginTop:'10%'}}
+                        style={{ borderRadius: '50%'}}
                         src={this.props.user.imageURL}
                         alt="User profile"
                     />
@@ -42,7 +49,7 @@ class Header extends Component {
         <nav className="navbar" key="7">
             <div className="d-flex w-100 order-0">
                 <Link to="/" className="navbar-brand mr-1">
-                    <span className="navBrand">Poll Pal</span>
+                    Poll Pal
                 </Link>
                 <button className="navbar-toggler collapsed" onClick={this.menuHandler}
                         type="button" data-toggle="collapse" 
@@ -53,12 +60,12 @@ class Header extends Component {
                     <span className="icon-bar bottom-bar"></span>
                     <span className="sr-only">Toggle navigation</span>
                 </button>
-                {/* <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsingNavbar">
-                    <i className="fas fa-bars"></i>
-                </button> */}
+                
             </div>
-            <div className="navbar-collapse collapse justify-content-between align-items-center w-50" id="collapsingNavbar">
-                <ul className="navbar-nav mx-auto text-center">
+            
+            <div className="navbar-collapse collapse justify-content-between align-items-left w-50" id="collapsingNavbar">
+                {this.addBackground}
+                <ul className="navbar-nav ml-auto text-center">
                     <Link to="/about">
                         <li className="nav-item" key="4">
                             <span className="nav-link" key="5">About</span>
@@ -75,9 +82,6 @@ class Header extends Component {
         </nav>
     );
   }
-
-
-  
 }
 
 export default Header;

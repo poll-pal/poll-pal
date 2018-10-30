@@ -17,10 +17,10 @@ class MainPage extends Component {
     onZipcodeSearch = (zipcode) => {
         this.setState({ loading: true })
         let candidate = null;
-        axios.get('http://localhost:3000/api/candidates/search?zip=' + zipcode).then(res => {
+        axios.get('/api/candidates/search?zip=' + zipcode).then(res => {
             candidate = res.data;
             let ballot = null;
-            axios.get('http://localhost:3000/api/ballotMeasures/?zip=' + zipcode).then(res => {
+            axios.get('/api/ballotMeasures/?zip=' + zipcode).then(res => {
                 ballot = res.data;
                 this.setState({ error: null, apiCandidate: candidate, apiBallot: ballot, loading: false });
                 console.log(ballot);
@@ -34,8 +34,8 @@ class MainPage extends Component {
         let content = (
             <div className="container" id="greeting">
                 <div className="row">
-                    <div className="col-lg-12 text-center">
-                        <img src='img/logo-1.png' className="responsive img-fluid logo" />
+                    <div className="col-md-8 offset-md-2 text-center">
+                        <img src='img/logo-1.png' className="img-fluid logo" />
                     </div>
 
                     <div className="col-lg-12" >
@@ -44,7 +44,8 @@ class MainPage extends Component {
                 </div>
                 {/* <Countdown /> */}
                 <ZipCodeSearch user={this.props.user} updateUser={this.props.updateUser} search={this.onZipcodeSearch} />
-                <div>{this.state.loading ? <p className="spinner fas fa-spinner">Loading Please Wait</p> : <p></p>}</div>
+                <div className="spinner">{this.state.loading ?
+                    <p className="spinnerFont"><i className="fa fa-spinner fa-spin fa-3x fa-fw"></i><span class="sr-only">&nbsp;&nbsp;Loading...</span></p> : <p></p>}</div>
             </div>
         );
         if (this.state.apiBallot.length || this.state.apiCandidate.length) {
