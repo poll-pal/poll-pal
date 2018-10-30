@@ -4,17 +4,25 @@ import BallotCard from '../BallotCard'
 
 class MyBallot extends Component {
 
-    noSavedInfo = () => {
+    candidateTitle = () => {
         if (this.props.user.candidates.length) {
             return "Your Candidates"
         } else {
             return "You have no saved candidates"
-        } if (this.props.user.ballotInitiatives.length) {
+        }
+
+
+    }
+
+    ballotsTitle = () => {
+        if (this.props.user.ballotInitiatives.length) {
             return "Your Ballot Measures"
         } else {
             return "You have no saved ballots"
         }
     }
+
+
 
 
 
@@ -26,8 +34,8 @@ class MyBallot extends Component {
                     ballots={this.props.user.ballotInitiatives}
                     candidates={this.props.user.candidates}
                     updateUser={this.props.updateUser}
-                    candidatesTitle={this.noSavedInfo()}
-                    ballotsTitle={this.noSavedInfo()}
+                    candidatesTitle={this.candidateTitle()}
+                    ballotsTitle={this.ballotsTitle()}
                 />
             </div >
         );

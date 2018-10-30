@@ -29,6 +29,7 @@ const BallotCard = props => (
                 <h2>{props.candidatesTitle}</h2>
             </div>
         </div>
+
         <div className="row resultsList">
             {props.candidates.map((candidate, index) => (
                 <CandidateCard
@@ -38,6 +39,9 @@ const BallotCard = props => (
                     updateUser={props.updateUser} />
             ))}
         </div>
+
+        {/* toggle from hide button to show button */}
+        <button onClick="hideCandidates">Hide Candidates</button>
 
         <div className="row initiaveRow">
             <div className="col-lg-12 col-xs-12 InitiativeResults">
@@ -56,6 +60,9 @@ const BallotCard = props => (
             }
             )}
         </div>
+        <button onClick="hideInitiatives">Hide Ballot Measures</button>
+
+
         <Footer />
     </div>
 );
