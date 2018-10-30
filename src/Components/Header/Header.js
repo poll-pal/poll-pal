@@ -22,6 +22,7 @@ class Header extends Component {
         }
     }
 
+
   render() {
     let content;
     // Navbar content if user is logged in

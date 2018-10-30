@@ -34,8 +34,9 @@ class MainPage extends Component {
         let content = (
             <div className="container" id="greeting">
                 <div className="row">
+
                     <div className="col-md-8 offset-md-2 text-center">
-                        <img src='img/logo-1.png' className="img-fluid logo" />
+                        <img src='img/logo-1.png' className="responsive img-fluid logo" />
                     </div>
 
                     <div className="col-lg-12" >
