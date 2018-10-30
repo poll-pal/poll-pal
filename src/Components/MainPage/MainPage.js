@@ -14,13 +14,13 @@ class MainPage extends Component {
         laoding: false
     };
 
-    onZipcodeSearch = (zipcode) => {
+    onSearch = (searchLocation) => {
         this.setState({ loading: true })
         let candidate = null;
-        axios.get('/api/candidates/search?zip=' + zipcode).then(res => {
+        axios.get('/api/candidates/search?zip=' + searchLocation).then(res => {
             candidate = res.data;
             let ballot = null;
-            axios.get('/api/ballotMeasures/?zip=' + zipcode).then(res => {
+            axios.get('/api/ballotMeasures/?zip=' + searchLocation).then(res => {
                 ballot = res.data;
                 this.setState({ error: null, apiCandidate: candidate, apiBallot: ballot, loading: false });
                 console.log(ballot);
@@ -28,6 +28,13 @@ class MainPage extends Component {
             });
         });
 
+    }
+
+    clearResults = () => {
+        this.setState({
+            apiBallot: [],
+            apiCandidate: []
+        });
     }
 
     render() {
@@ -44,15 +51,23 @@ class MainPage extends Component {
                     </div>
                 </div>
                 {/* <Countdown /> */}
-                <ZipCodeSearch user={this.props.user} updateUser={this.props.updateUser} search={this.onZipcodeSearch} />
+                <ZipCodeSearch user={this.props.user} updateUser={this.props.updateUser} search={this.onSearch} />
                 <div className="spinner">{this.state.loading ?
-                    <p className="spinnerFont"><i className="fa fa-spinner fa-spin fa-3x fa-fw"></i><span class="sr-only">&nbsp;&nbsp;Loading...</span></p> : <p></p>}</div>
+                    <p className="spinnerFont"><i className="fa fa-spinner fa-spin fa-3x fa-fw"></i><span className="sr-only">&nbsp;&nbsp;Loading...</span></p> : <p></p>}</div>
             </div>
         );
         if (this.state.apiBallot.length || this.state.apiCandidate.length) {
             content = (
                 <div className="row">
-                    <BallotCard user={this.props.user} ballots={this.state.apiBallot} candidates={this.state.apiCandidate} updateUser={this.props.updateUser} />
+                    <BallotCard
+                        user={this.props.user}
+                        ballots={this.state.apiBallot}
+                        candidates={this.state.apiCandidate}
+                        updateUser={this.props.updateUser}
+                        candidatesTitle="Candidates in Your District"
+                        ballotsTitle="Initiatives in Your District"
+                    />
+                    <button type="button" className="btn" onClick={this.clearResults}>Searh Again</button>
                 </div>
             );
         }

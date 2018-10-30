@@ -42,6 +42,8 @@ class CandidateCard extends Component {
             </div>
         );
 
+
+
         if (this.props.user) {
             let choice = null;
             const candidate = this.findUserCandidate();
@@ -68,6 +70,20 @@ class CandidateCard extends Component {
         return content;
     }
 
+
+
+    renderWebsite = () => {
+        if (this.props.candidate.website) {
+            return <span><a href={this.props.candidate.website} target="_blank">website</a></span>
+        }
+    }
+
+    renderTwitterHandle = () => {
+        if (this.props.candidate.twitter) {
+            return <span><a target="_blank"><i className="fab fa-twitter fa-sm"></i>@</a>{this.props.candidate.twitter}</span>
+        }
+    }
+
     render() {
         return (
             <div className="mainBallotCard">
@@ -75,19 +91,15 @@ class CandidateCard extends Component {
                     <div className="card">
                         <div className="card-body">
                             <h3 className="card-title">{this.props.candidate.name}</h3>
-                            {/* need to grab these */}
                             <h4 className="cadidateOffice">{this.props.candidate.office}</h4>
                             <h5 className="cadidateParty">{this.props.candidate.party}</h5>
-                            <p>
-                                <span><a href={this.props.candidate.website} target="_blank">website</a></span> |
-                        <span><a href={this.props.candidate.twitter} target="_blank"><i className="fab fa-twitter fa-sm"></i></a></span>
-                            </p>
+                            <p> {this.renderWebsite()} </p>
+                            <p>{this.renderTwitterHandle()}</p>
                             {this.renderVotingContent()}
                         </div>
                     </div>
                 </div>
-            </div>
-
+            </div >
         );
     }
 }

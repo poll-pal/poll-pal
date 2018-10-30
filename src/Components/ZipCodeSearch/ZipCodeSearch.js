@@ -1,21 +1,17 @@
 import React, { Component } from 'react';
 import "./ZipCodeSearch.css";
-import axios from 'axios';
-import BallotCard from '../BallotCard'
 
 class ZipCodeSearch extends Component {
 
     state = {
         zipCode: "",
-        apiBallot: [],
-        apiCandidate: [],
         error: null,
         laoding: false
     };
 
 
-    handleUseAddressButton = () => {
-
+    handleUseAddressButton = (event) => {
+        this.props.search(this.props.user.address);
     }
 
     validateZip = () => {
@@ -63,7 +59,7 @@ class ZipCodeSearch extends Component {
                                     value={this.state.zipCode}
                                     onChange={this.handleInputChange}
                                 />
-                                {this.props.user ?
+                                {this.props.user.address ?
                                     <button
                                         onClick={this.handleUseAddressButton}
                                         type="button"

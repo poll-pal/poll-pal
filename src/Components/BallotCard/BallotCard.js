@@ -26,7 +26,7 @@ const BallotCard = props => (
         </div>
         <div className="row">
             <div className="col-lg-12 candidateResults">
-                <h2>Candidates in Your District</h2>
+                <h2>{props.candidatesTitle}</h2>
             </div>
         </div>
         <div className="row resultsList">
@@ -41,7 +41,7 @@ const BallotCard = props => (
 
         <div className="row initiaveRow">
             <div className="col-lg-12 col-xs-12 InitiativeResults">
-                <h2>Initiatives in Your District</h2>
+                <h2>{props.ballotsTitle}</h2>
             </div>
         </div>
         <div className="row resultsList">
