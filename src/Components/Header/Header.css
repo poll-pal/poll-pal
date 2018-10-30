@@ -31,6 +31,8 @@
 .navbar-brand{
     text-shadow: 3px 3px 8px black;
     font-weight: bold;
+    font-size: 3rem;
+    color: white !important;
 }
 
 .navbar-brand:hover{
