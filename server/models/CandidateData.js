@@ -6,12 +6,15 @@ const Schema = mongoose.Schema;
 
 const CandidateSchema = new Schema({
     name: String,
+    id: Number,
     office: String,
     party: String,
     district: String,
     state: String,
-    incumbent: Boolean,
+    incumbent: Number,
     website: String,
+    twitter: String,
+    choice: String,
     socialMedia: [SocialMedia]
 
 });
