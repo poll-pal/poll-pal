@@ -31,6 +31,8 @@
 .navbar-brand{
     text-shadow: 3px 3px 8px black;
     font-weight: bold;
+    font-size: 3rem;
+    color: white !important;
 }
 
 .navbar-brand:hover{
@@ -59,7 +61,6 @@
     text-shadow: 3px 3px 8px black !important;
     border: none;
     background: transparent !important;
-
 }
 
 .logout{
@@ -88,8 +89,7 @@
     background: #E5006B;
   }
 
-  
-  .navbar-toggler:focus {
+ .navbar-toggler:focus {
     outline: none;
     background: #E5006B;
   }
