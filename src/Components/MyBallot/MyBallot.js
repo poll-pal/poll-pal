@@ -1,20 +1,37 @@
-import React from 'react'
+import React, { Component } from 'react'
 import "./MyBallot.css";
 import BallotCard from '../BallotCard'
 
-const MyBallot = (props) => {
-    return (
-        <div>
-            <BallotCard
-                user={props.user}
-                ballots={props.user.ballotInitiatives}
-                candidates={props.user.candidates}
-                updateUser={props.updateUser}
-                candidatesTitle="Your Candidates"
-                ballotsTitle="Your Ballot Measures"
-            />
-        </div>
-    );
+class MyBallot extends Component {
+
+    noSavedInfo = () => {
+        if (this.props.user.candidates.length) {
+            return "Your Candidates"
+        } else {
+            return "You have no saved candidates"
+        } if (this.props.user.ballotInitiatives.length) {
+            return "Your Ballot Measures"
+        } else {
+            return "You have no saved ballots"
+        }
+    }
+
+
+
+    render() {
+        return (
+            <div>
+                <BallotCard
+                    user={this.props.user}
+                    ballots={this.props.user.ballotInitiatives}
+                    candidates={this.props.user.candidates}
+                    updateUser={this.props.updateUser}
+                    candidatesTitle={this.noSavedInfo()}
+                    ballotsTitle={this.noSavedInfo()}
+                />
+            </div >
+        );
+    }
 }
 
 export default MyBallot;
