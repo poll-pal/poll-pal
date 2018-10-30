@@ -15,6 +15,7 @@ class Header extends Component {
     console.log(this.state);
   }
 
+
   render() {
     let content;
     // Navbar content if user is logged in
