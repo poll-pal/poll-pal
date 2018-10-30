@@ -29,7 +29,7 @@ class Header extends Component {
         content = 
             <div className="profile nav-item text-center">
                 <Link to="/user" className="nav-link" key="1">
-                    <span className="userName">{this.props.user.givenName}</span><br/>
+                    <span className="namePlate">{this.props.user.givenName}</span><br/>
                     <img
                         className="profilePic"
                         style={{ borderRadius: '50%'}}
