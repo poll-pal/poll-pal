@@ -30,6 +30,7 @@ class Header extends Component {
         if (this.props.user) {
             content =
                 <div className="profile nav-item text-center">
+                    <Link to="/myballot" className="nav-link">My Ballot</Link>
                     <Link to="/user" className="nav-link" key="1">
                         <span className="namePlate">{this.props.user.givenName}</span><br />
                         <img
