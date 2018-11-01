@@ -31,10 +31,10 @@ class BallotCard extends Component {
     renderCandidates = () => {
         if (this.state.showCandidate) {
             return (<div>
-                <button onClick={this.toggleCandidate}>Hide Candidates</button>
+                
                 <div className="row">
                     <div className="col-lg-12 candidateResults">
-                        <h2>{this.props.candidatesTitle}</h2>
+                        <span><h2>{this.props.candidatesTitle}</h2></span><span><button className="btn btn-display" onClick={this.toggleCandidate}>Hide Candidates</button></span>
                     </div>
                 </div>
 
@@ -49,7 +49,7 @@ class BallotCard extends Component {
                 </div>
             </div>)
         } else {
-            return <button onClick={this.toggleCandidate}>Show Candidates</button>
+            return <span><button className="btn btn-display" onClick={this.toggleCandidate}>Show Candidates</button></span>
 
         }
 
@@ -58,10 +58,9 @@ class BallotCard extends Component {
     renderInitiatives = () => {
         if (this.state.showInitiative) {
             return (<div>
-                <button onClick={this.toggleInitiative}>Hide Initiatives</button>
                 <div className="row initiaveRow">
                     <div className="col-lg-12 col-xs-12 InitiativeResults">
-                        <h2>{this.props.ballotsTitle}</h2>
+                        <span><h2>{this.props.ballotsTitle}</h2></span><span><button className="btn btn-display" onClick={this.toggleInitiative}>Hide Initiatives</button></span>
                     </div>
                 </div>
                 <div className="row resultsList">
@@ -78,7 +77,7 @@ class BallotCard extends Component {
                 </div>
             </div>)
         } else {
-            return <button onClick={this.toggleInitiative}>Show Initiatives</button>
+            return <span><button className="btn btn-display" onClick={this.toggleInitiative}>Show Initiatives</button></span>
 
         }
 

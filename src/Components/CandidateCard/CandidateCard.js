@@ -4,13 +4,13 @@ import "./CandidateCard.css";
 class CandidateCard extends Component {
 
     handleYesVoteClick = (event) => {
-        this.updateVote('yes');
+        this.updateVote('Yes');
         console.log('you clicked yes on a candidate')
     }
 
     handleNoVoteClick = (event) => {
+        this.updateVote('No');
         console.log('you clicked no on a candidate')
-        this.updateVote('no');
     }
 
     updateVote = (choice) => {
@@ -69,8 +69,6 @@ class CandidateCard extends Component {
         }
         return content;
     }
-
-
 
     renderWebsite = () => {
         if (this.props.candidate.website) {

@@ -6,7 +6,7 @@ class RegisterToVote extends Component {
     render() {
       return (
         <div>
-            <a href="https://register.vote.org/" target="_blank"><button className="quizButton">Register To Vote Here!</button></a>
+          <a href="https://register.vote.org/" target="_blank" rel="noopener noreferrer"><button className="quizButton">Register To Vote Here!</button></a>
         </div>
       );
     }
