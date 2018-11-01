@@ -5,7 +5,10 @@ import "./Header.css";
 class Header extends Component {
     constructor(props) {
         super(props);
-        this.state = { isOpen: true };
+        this.state = { 
+            isOpen: true,
+            path: "" 
+        };
     }
     menuHandler = () => {
         this.setState({
@@ -51,7 +54,9 @@ class Header extends Component {
             <nav className="navbar" key="7">
                 <div className="d-flex w-100 order-0">
                     <a href="/" className="navbar-brand mr-1">
-                        <span className="navBrand">Poll Pal</span>
+                        {this.state.path != "/" &&
+                            <span className="navBrand">Poll Pal</span>
+                        }
                     </a>
                     <button className="navbar-toggler collapsed" onClick={this.menuHandler}
                         type="button" data-toggle="collapse"
@@ -83,6 +88,16 @@ class Header extends Component {
                 </div>
             </nav>
         );
+    }
+    componentDidMount(){
+        this.setState({
+            path: window.location.pathname
+        });
+    }
+    componentDidUpdate(){
+        this.setState({
+            path: window.location.pathname
+        });
     }
 }
 

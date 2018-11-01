@@ -12,7 +12,10 @@ import About from './Components/About';
 import MyBallot from './Components/MyBallot';
 
 class App extends Component {
-  state = { user: null, loading: true };
+  state = { 
+    user: null, 
+    loading: true
+  };
 
   componentDidMount() {
     axios.get('/auth/current_user').then(({ data }) => {
