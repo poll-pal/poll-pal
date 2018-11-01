@@ -30,13 +30,6 @@ class MainPage extends Component {
 
     }
 
-    clearResults = () => {
-        this.setState({
-            apiBallot: [],
-            apiCandidate: []
-        });
-    }
-
     render() {
         let content = (
             <div className="container" id="greeting">
@@ -66,7 +59,7 @@ class MainPage extends Component {
                         candidatesTitle="Candidates in Your District"
                         ballotsTitle="Initiatives in Your District"
                     />
-                    <Footer />
+                    <Footer className="footer" />
                 </div>
             );
         }
