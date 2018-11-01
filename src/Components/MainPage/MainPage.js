@@ -3,8 +3,8 @@ import "./MainPage.css";
 import Countdown from '../Countdown/';
 import ZipCodeSearch from '../ZipCodeSearch/';
 import axios from 'axios';
-import BallotCard from '../BallotCard'
-
+import BallotCard from '../BallotCard';
+import Footer from '../Footer';
 
 class MainPage extends Component {
     state = {
@@ -66,7 +66,7 @@ class MainPage extends Component {
                         candidatesTitle="Candidates in Your District"
                         ballotsTitle="Initiatives in Your District"
                     />
-                    <button type="button" className="btn" onClick={this.clearResults}>Searh Again</button>
+                    <Footer />
                 </div>
             );
         }
