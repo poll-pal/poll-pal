@@ -6,7 +6,7 @@ class PoliticalQuiz extends Component {
     render() {
       return (
         <div >
-            <a href="http://www.people-press.org/quiz/political-typology/" target="_blank"><button className="quizButton">Take A Political Typology Quiz Here!</button></a>
+          <a href="http://www.people-press.org/quiz/political-typology/" target="_blank" rel="noopener noreferrer"><button className="quizButton">Take A Political Typology Quiz Here!</button></a>
         </div>
       );
     }
