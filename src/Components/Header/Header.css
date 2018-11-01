@@ -29,10 +29,12 @@
 }
 
 .navbar-brand{
-    text-shadow: 3px 3px 8px black;
+  
     font-weight: bold;
     font-size: 3rem;
     color: white !important;
+    font-family: 'Patua One', cursive;
+    text-shadow: -1px 1px 3px #FFB106;
 }
 
 .navbar-brand:hover{

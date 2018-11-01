@@ -1,0 +1,39 @@
+.quizButton{
+    background: #01C9EA;
+    color:#fff;
+    border:none;
+    position:relative;
+    height:60px;
+    font-size:1.6em;
+    padding:0 2em;
+    cursor:pointer;
+    transition:800ms ease all;
+    outline:none;
+    font-family: 'Pragati Narrow', sans-serif;
+  }
+  .quizButton:hover{
+    background:#fff;
+    color:#01C9EA;
+  }
+  .quizButton:before,.quizButton:after{
+    content:'';
+    position:absolute;
+    top:0;
+    right:0;
+    height:2px;
+    width:0;
+    background: #01C9EA;
+    transition:400ms ease all;
+  }
+  .quizButton:after{
+    right:inherit;
+    top:inherit;
+    left:0;
+    bottom:0;
+  }
+  .quizButton:hover:before,.quizButton:hover:after{
+    width:100%;
+    transition:800ms ease all;
+  }
+  
+  
