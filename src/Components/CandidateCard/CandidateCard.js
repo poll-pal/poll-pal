@@ -86,7 +86,7 @@ class CandidateCard extends Component {
         return (
             <div className="mainBallotCard">
                 <div className="col-lg-4 col-sm-12">
-                    <div className="card">
+                    <div className="card candidateCard">
                         <div className="card-body">
                             <h3 className="card-title">{this.props.candidate.name}</h3>
                             <h4 className="cadidateOffice">{this.props.candidate.office}</h4>
