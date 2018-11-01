@@ -11,7 +11,7 @@ class MainPage extends Component {
         zipCode: "",
         apiBallot: [],
         apiCandidate: [],
-        laoding: false
+        loading: false
     };
 
     onSearch = (searchLocation) => {
@@ -64,6 +64,16 @@ class MainPage extends Component {
             );
         }
         return content;
+    }
+
+    componentDidMount(){
+        // This will be used to hide the logo and other main page activities
+        let currentPage = window.location.href;
+        let path  = window.location.pathname
+        console.log("Current Page is: ")
+        console.log(currentPage);
+        console.log("Current Path is: ")
+        console.log(path);
     }
 }
 
