@@ -28,13 +28,6 @@ class BallotCard extends Component {
         }
     }
 
-    clearResults = () => {
-        this.setState({
-            apiBallot: [],
-            apiCandidate: []
-        });
-    }
-
     renderCandidates = () => {
         if (this.state.showCandidate) {
             return (<div>
@@ -82,21 +75,16 @@ class BallotCard extends Component {
                     }
                     )}
                 </div>
-                <button type="button" className="btn btn-display" onClick={this.clearResults}>Search Again</button>
             </div>)
         } else {
             return (
                 <div>
                     <span><button className="btn btn-display" onClick={this.toggleInitiative}>Show Initiatives</button></span>
-                    <span><button type="button" className="btn btn-display" onClick={this.clearResults}>Search Again</button></span>
                 </div>   
             );
         }
 
     }
-
-
-
 
     render() {
         console.log(this.state.showCandidate)
@@ -122,10 +110,10 @@ class BallotCard extends Component {
                 </div>
                 {this.renderCandidates()}
                 {this.renderInitiatives()}
+                <br/><br/>
             </div>
         )
     }
-
 };
 
 export default BallotCard;
