@@ -1,5 +1,5 @@
 
-body{
+body {
   background-image: url('samuel-branch-442129-unsplash\ copy.jpg');
   width: 100%;
   height: auto;
@@ -16,7 +16,6 @@ body{
 
 }
 
-
 .responsive {
   width: 100%;
   height: auto;
@@ -29,7 +28,6 @@ body{
 #greeting{
   margin-top:80px;
 }
-
 
 #second {
   color: white;
@@ -77,5 +75,22 @@ input[type="text"]::-webkit-input-placeholder {
   color: white;
 }
 
+.btnSearch {
+  justify-content: center;
+  width: 30%;
+  padding: 10px;
+  font-size: 24px;
+  color: #4babef;
+  border-radius: 8px;
+  margin-top: 2%;
+}
+
+.footer {
+  background-color: rgb(255,255,255, .7);
+  width: 100%;
+  left: 0;
+  right: 0;
+  padding: 10px;
+}
 
 
