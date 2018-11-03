@@ -1,4 +1,3 @@
-
 body{
   background-image: url('samuel-branch-442129-unsplash.jpg');
   width: 100%;
@@ -76,21 +75,42 @@ input[type="text"]::-webkit-input-placeholder {
 }
 
 .btnSearch {
-  justify-content: center;
-  width: 30%;
-  padding: 10px;
-  font-size: 24px;
-  color: #4babef;
-  border-radius: 8px;
-  margin-top: 2%;
+    background:white;
+    color: #01C9EA;
+    border:none;
+    position:relative;
+    height:60px;
+    font-size:1.6em;
+    padding:0 2em;
+    cursor:pointer;
+    transition:800ms ease all;
+    outline:none;
+    font-family: 'Pragati Narrow', sans-serif;
+    margin-bottom: 5%;
+  }
+
+.btnSearch:hover{
+  background:#fff;
+  color:#01C9EA;
 }
 
-.footer {
-  background-color: rgb(255,255,255, .7);
-  width: 100%;
-  left: 0;
-  right: 0;
-  padding: 10px;
-}
-
-
+ .btnSearch:before,.btnSearch:after{
+    content:'';
+    position:absolute;
+    top:0;
+    right:0;
+    height:2px;
+    width:0;
+    background: #01C9EA;
+    transition:400ms ease all;
+  }
+  .btnSearch:after{
+    right:inherit;
+    top:inherit;
+    left:0;
+    bottom:0;
+  }
+  .btnSearch:hover:before,.btnSearch:hover:after{
+    width:100%;
+    transition:800ms ease all;
+  }

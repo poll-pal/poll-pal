@@ -19,7 +19,10 @@ const About = () => (
                 <p className="aboutPrghTwo">
                     Enter your zip code for a snapshot of your ballot, then get prepared to make a difference. Poll Pal makes it easy
                     for you to make informed decisions so you can get involved without all the confusion and stress that comes with
-                    ballots these days.
+                    ballots these days.<br/>
+                    <span><i className="social fab fa-facebook fa-lg"></i></span>
+                    <span><i className="social fab fa-twitter-square fa-lg"></i></span>
+                    <span><i className="social fab fa-instagram fa-lg"></i></span>
                 </p>
             </div>
         </div>
