@@ -108,7 +108,6 @@ class UserProfileForm extends Component {
 
             content = (<form>
                 <div className="form-group">
-
                     <input type="text" className="form-control" id="firstName"
                         value={this.state.firstName}
                         onChange={this.handleInputChange}
@@ -146,7 +145,7 @@ class UserProfileForm extends Component {
                         name="location"
                         placeholder="location" />
                 </div> */}
-                <button onClick={this.handleFormSubmit} className="btn btn-primary">Update</button>
+                <button onClick={this.handleFormSubmit} className="btn btnUpdate">Update</button>
             </form>);
         }
         return content;
