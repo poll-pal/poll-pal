@@ -32,12 +32,12 @@ class Header extends Component {
             content =
                 <div>
                 <NavItem>
-                    <NavLink href="/myballot">My Ballot</NavLink>
+                    <NavLink tag={Link} to="/myballot">My Ballot</NavLink>
                 </NavItem>
                 <hr className="divider" />
                     <div id="profileGroup">
                         <NavItem>
-                            <NavLink href="/user">
+                            <NavLink tag={Link} to="/user">
                                 <span className="namePlate">{this.props.user.givenName}</span><br />
                                 {/* <img
                                     className="profilePic"
@@ -48,7 +48,7 @@ class Header extends Component {
                             </NavLink>
                         </NavItem>
                         <NavItem className="logout-link">
-                            <NavLink href="/auth/logout">Logout <i className="fas fa-sign-out-alt"></i></NavLink>
+                            <NavLink tag={Link} to="/auth/logout">Logout <i className="fas fa-sign-out-alt"></i></NavLink>
                         </NavItem>
                     </div>
                 </div>;
@@ -70,7 +70,7 @@ class Header extends Component {
                     <i className="fas fa-times" onClick={this.toggleNavbar}></i> 
                 </NavItem>
                 <NavItem>
-                  <NavLink href="/">
+                  <NavLink tag={Link} to="/">
                     <NavbarBrand className="mr-auto">
                         <span className="navBrand">Poll Pal</span>
                     </NavbarBrand>
@@ -80,7 +80,7 @@ class Header extends Component {
                   <NavLink tag={Link} to="/about">About</NavLink>
                 </NavItem>
                 <NavItem>
-                  <NavLink href="/survey">Get Started</NavLink>
+                  <NavLink tag={Link} to="/survey">Get Started</NavLink>
                 </NavItem>
                 {content}
               </Nav>
