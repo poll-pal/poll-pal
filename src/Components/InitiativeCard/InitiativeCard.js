@@ -94,7 +94,6 @@ class InitiativeCard extends Component {
                 <div className="col-lg-4 col-sm-12">
                     <div className="card">
                         <div className="card-body">
-                            {/* renders official title if present, if not renders name */}
                             <h4 className="card-title">{this.props.ballot.name}</h4>
                             <a href={this.props.ballot.url} target="_blank" rel="noopener noreferrer">Read More</a>
                         </div>
