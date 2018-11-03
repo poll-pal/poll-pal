@@ -70,14 +70,14 @@ class Header extends Component {
                     <i className="fas fa-times" onClick={this.toggleNavbar}></i> 
                 </NavItem>
                 <NavItem>
-                  <NavLink tag={Link} href="/">
+                  <NavLink href="/">
                     <NavbarBrand className="mr-auto">
                         <span className="navBrand">Poll Pal</span>
                     </NavbarBrand>
                   </NavLink>
                 </NavItem>
                 <NavItem>
-                  <NavLink href="/about">About</NavLink>
+                  <NavLink tag={Link} to="/about">About</NavLink>
                 </NavItem>
                 <NavItem>
                   <NavLink href="/survey">Get Started</NavLink>
