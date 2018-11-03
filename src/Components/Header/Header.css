@@ -140,14 +140,35 @@
    
   }
   
-  .navbar-toggler:not(.collapsed) .icon-bar:nth-child(2) {
+.navbar-toggler:not(.collapsed) .icon-bar:nth-child(2) {
     opacity: 0;
     transition: ease all .2s;
    
-  }
+}
   
-  .navbar-toggler:not(.collapsed) .icon-bar:nth-child(3) {
+.navbar-toggler:not(.collapsed) .icon-bar:nth-child(3) {
     transform: rotate(-45deg) translate(7px, -4px);
     transition: ease all .2s;
    
-  }
+}
+
+#navToggleButton{
+    position: relative;
+}
+
+#profileGroup{
+    position: relative;
+    right: 1vw;
+}
+
+.custoNav{
+    position: relative;
+    background-color: blueviolet;
+    left: 75%;
+    top: -20%;
+}
+
+.linkList{
+    position: relative;
+    left: -80%;
+}
