@@ -2,7 +2,6 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "./UserProfile.css";
 
-
 // Displays the user profile (image, location, affiliation)
 const UserProfile = props => {
     let content = (<div className="container userContainer">
@@ -16,7 +15,7 @@ const UserProfile = props => {
                     <img src={props.user.imageURL} alt="user" className="userImage rounded" />
                     <h2 className="userName">{props.user.givenName} {props.user.familyName}</h2>
                     <br/>
-                    <h3 className="subFont">80214{props.user.address}</h3>
+                    <h3 className="subFont">{props.user.address ? props.user.address : 'Enter an Address (ex: 80214)'}</h3>
                     <br/>
                     <Link to="/user/edit">
                         <button type="button" className="btn btn-info subFont">Edit</button>
@@ -49,7 +48,7 @@ const UserProfile = props => {
                         </table>
                     </div>
                 </div>
-            </div>         
+            </div>      
         </div>
         );
     }
