@@ -12,6 +12,7 @@
     font-size: 3vw;
     text-shadow: 2px 2px 3px rgba(100,100,100,0.6);
     color: white !important;
+    padding-bottom: 2.5vw !important;
 }
 
 #zipSearch:focus{
@@ -85,4 +86,12 @@ select:-webkit-autofill:focus {
 .currentAddressBtn:hover:before,.currentAddressBtn:hover:after {
     width:100%;
     transition:800ms ease all;
+}
+
+@media only screen and (max-width: 1000px){
+    #zipSearch{
+        font-size: 2rem;
+        padding-bottom: 27px !important;
+    }
+
 }
