@@ -32,12 +32,12 @@ class Header extends Component {
             content =
                 <div>
                 <NavItem>
-                    <NavLink tag={Link} to="/myballot">My Ballot</NavLink>
+                    <NavLink tag={Link} to="/myballot" onClick={this.toggleNavbar}>My Ballot</NavLink>
                 </NavItem>
                 <hr className="divider" />
                     <div id="profileGroup">
                         <NavItem>
-                            <NavLink tag={Link} to="/user">
+                            <NavLink tag={Link} to="/user" onClick={this.toggleNavbar}>
                                 <span className="namePlate">{this.props.user.givenName}</span><br />
                                 {/* <img
                                     className="profilePic"
@@ -48,7 +48,7 @@ class Header extends Component {
                             </NavLink>
                         </NavItem>
                         <NavItem className="logout-link">
-                            <NavLink tag={Link} to="/auth/logout">Logout <i className="fas fa-sign-out-alt"></i></NavLink>
+                            <NavLink href="/auth/logout">Logout <i className="fas fa-sign-out-alt"></i></NavLink>
                         </NavItem>
                     </div>
                 </div>;
@@ -70,17 +70,17 @@ class Header extends Component {
                     <i className="fas fa-times" onClick={this.toggleNavbar}></i> 
                 </NavItem>
                 <NavItem>
-                  <NavLink tag={Link} to="/">
+                  <NavLink tag={Link} to="/" onClick={this.toggleNavbar}>
                     <NavbarBrand className="mr-auto">
                         <span className="navBrand">Poll Pal</span>
                     </NavbarBrand>
                   </NavLink>
                 </NavItem>
                 <NavItem>
-                  <NavLink tag={Link} to="/about">About</NavLink>
+                  <NavLink tag={Link} to="/about" onClick={this.toggleNavbar}>About</NavLink>
                 </NavItem>
                 <NavItem>
-                  <NavLink tag={Link} to="/survey">Get Started</NavLink>
+                  <NavLink tag={Link} to="/survey" onClick={this.toggleNavbar}>Get Started</NavLink>
                 </NavItem>
                 {content}
               </Nav>
