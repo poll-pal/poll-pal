@@ -3,7 +3,6 @@ import './App.css';
 import axios from 'axios';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Header from './Components/Header/Header';
-import BSNav from './Components/Navbar/Navbar';
 import UserProfile from './Components/UserProfile';
 import UserProfileForm from './Components/UserProfileForm';
 import BallotCard from './Components/BallotCard';
@@ -55,7 +54,6 @@ class App extends Component {
             {/* <BSNav user={this.state.user} /> */}
             <Header user={this.state.user} />
             <div className="container">
-              
               {content}
             </div>
           </div>
