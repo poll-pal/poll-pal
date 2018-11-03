@@ -34,19 +34,20 @@ class Header extends Component {
                 <NavItem>
                     <NavLink href="/myballot">My Ballot</NavLink>
                 </NavItem>
+                <hr className="divider" />
                     <div id="profileGroup">
                         <NavItem>
                             <NavLink href="/user">
                                 <span className="namePlate">{this.props.user.givenName}</span><br />
-                                <img
+                                {/* <img
                                     className="profilePic"
                                     style={{ borderRadius: '50%' }}
                                     src={this.props.user.imageURL}
                                     alt="User profile"
-                                />
+                                /> */}
                             </NavLink>
                         </NavItem>
-                        <NavItem>
+                        <NavItem className="logout-link">
                             <NavLink href="/auth/logout">Logout <i className="fas fa-sign-out-alt"></i></NavLink>
                         </NavItem>
                     </div>
