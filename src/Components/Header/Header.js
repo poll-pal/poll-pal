@@ -60,7 +60,7 @@ class Header extends Component {
         <div>
           <Navbar color="faded" light>
             <NavbarBrand href="/" className="mr-auto">{(this.state.path != "/" && this.state.collapsed) &&
-                            <span className="navBrand">Poll Pal</span>
+                            <span className="navBrand logo">Poll Pal</span>
                         }
             </NavbarBrand>
             {this.state.collapsed && <NavbarToggler onClick={this.toggleNavbar} id="navToggleButton" className="mr-2" />}

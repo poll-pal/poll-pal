@@ -1,5 +1,11 @@
+@font-face {
+    font-family: openBrush;
+    src: url(OpenBrush.ttf);
+}
+
 *{
     font-family: 'Oxygen', sans-serif;
     font-family: 'Noto Sans JP', sans-serif;
     
 }
+
