@@ -1,3 +1,8 @@
+/*
+ *  Built with Google Maps from Google Map React - https://github.com/fullstackreact/google-maps-react#readme
+ */
+
+
 import React, {Component} from 'react';
 import {Map, InfoWindow, Marker, GoogleApiWrapper, Listing} from 'google-maps-react';
 import axios from 'axios';
