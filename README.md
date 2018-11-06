@@ -10,16 +10,26 @@ Poll Pal makes filling out your ballot a whole lot easier. Users area able to se
 - Information on what a yes or no vote would mean on Initiatives
 
 ## Technologies
-- Ballotpedia API
-- MongoDB
-- React
-- OAuth
+### MERN Stack <img src="MERN.png">
+- **M**ongoDB
+- **E**xpress
+- **R**eact
+- **N**ode
+- ES7
+- Authentication by OAuth 
 - Sellenium Web Driver
-- HTML5
-- CSS3
-- Node
+- Jest
+- CSS3 / LESS
 
-## Heroku
+
+## 3rd Party APIs
+- Ballotpedia API
+- Google Maps and Civic Information
+- MapQuest API
+- PEW Research
+
+### Deployed on Heroku
 https://poll-pal.herokuapp.com/
 
+## Instructions to Install Locally
 
