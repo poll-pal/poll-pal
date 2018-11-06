@@ -3,8 +3,9 @@ import { Link } from 'react-router-dom';
 import "./Footer.css";
 
 const Footer = () => (
+
     <footer className="footer">
-        <div className="container">
+        <div className="container-fluid">
             <div className="row">
                 <div className="col-12 col-md">
                     <small className="d-block mb-3 text-muted">Poll Pal, LLC © 2018</small>

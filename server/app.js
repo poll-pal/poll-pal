@@ -13,6 +13,7 @@ const authRouter = require('./routes/auth');
 const districtsRouter = require('./routes/districts');
 const candidatesRouter = require('./routes/candidates');
 const measuresRouter = require('./routes/ballotMeasures');
+const pollingRouter = require('./routes/pollingPlaces');
 
 const cookieSession = require('cookie-session');
 const passport = require('passport');
@@ -46,6 +47,7 @@ app.use('/api/users', userRouter);
 app.use('/api/districts', districtsRouter);
 app.use('/api/candidates', candidatesRouter);
 app.use('/api/ballotMeasures', measuresRouter);
+app.use('/api/pollingPlaces', pollingRouter);
 app.get('*', (req, res) => {
   res.sendFile('build/index.html', { root: global });
 });

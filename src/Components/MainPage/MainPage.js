@@ -27,7 +27,13 @@ class MainPage extends Component {
                 console.log(candidate);
             });
         });
+    }
 
+    clearResults = () => {
+        this.setState({
+            apiBallot: [],
+            apiCandidate: []
+        });
     }
 
     render() {
@@ -59,7 +65,9 @@ class MainPage extends Component {
                         candidatesTitle="Candidates in Your District"
                         ballotsTitle="Initiatives in Your District"
                     />
-                    <Footer className="footer" />
+                    <div className="col-md-12 text-center">
+                        <button type="button" className="btn btnSearch" onClick={this.clearResults}>Search Again</button>
+                    </div>
                 </div>
             );
         }

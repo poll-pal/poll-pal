@@ -50,9 +50,12 @@ class App extends Component {
     return (
       <div>
         <Router>
-          <div className="container">
+          <div>
+            {/* <BSNav user={this.state.user} /> */}
             <Header user={this.state.user} />
-            {content}
+            <div className="container">
+              {content}
+            </div>
           </div>
         </Router>
       </div>

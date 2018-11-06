@@ -39,6 +39,7 @@
 .userImage {
     height: 6vw;
     width: 6vw;
+    border-radius:50% !important;
 }
 
 .districts{
