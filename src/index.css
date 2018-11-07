@@ -1,10 +1,13 @@
+/*    Poll Pal - Katharine Arnold, Katelyn Manuel, Sara Hamme & Schuyler Ankele
+ *    Global Styles for Poll Pal React App
+ *    Description: The styles in this CSS should only be used for app-wide styles
+ */
+
+
 @import url('https://fonts.googleapis.com/css?family=Noto+Serif|Oxygen');
-
-
 
 body {
   margin: 0;
   padding: 0;
   max-height: 100vh;
-
 }
