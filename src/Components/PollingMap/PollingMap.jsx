@@ -33,7 +33,7 @@ export class PollingMap extends Component {
    }
 
    getPlaces(){
-       return <Listing places={this.state.places} />;
+       return <Listing places={this.state.pollingPlaces} />;
    }
 
     render() {
