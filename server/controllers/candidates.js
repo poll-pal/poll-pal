@@ -3,7 +3,7 @@ require('dotenv').config();
 // const router = express.Router();
 const axios = require('axios');
 // const BP_URL = `https://api.ballotpedia.org/v3/api/contains?access_token=${process.env.BP_KEY}&point=`;
-const BP_URL = `http://api.ballotpedia.org/v3/api/1.1/tables/candidates/rows?access_token=${process.env.BP_KEY}&filters[race_general_election_date][eq]=2018-11-06&filters[general_status][eq]=On the Ballot&filters[race_election_district_name][eq]=`
+const BP_URL = `http://api.ballotpedia.org/v3/api/1.1/tables/candidates/rows?access_token=${process.env.BP_KEY}&filters[race_general_election_date][eq]=2018-11-06&filters[general_status][neq]=null&filters[race_election_district_name][eq]=`
 const districts = require('./district');
 const geocoder = require('./geocode');
 const districtsArray = [];
