@@ -1,6 +1,8 @@
 # Poll Pal
 Hey pal voting is cool.  Let us help you :)
 
+### Notice to users of Poll-Pal: We will be repurposing the site to include some Politician Information & Financial Data until the next major election in 2020
+
 Poll Pal makes filling out your ballot a whole lot easier. Users area able to search by zip code for their state and district candidates and ballot measures. This helps to make informed decisions less daunting when it comes time to vote. 
 
 ## Highlighted Features: 
